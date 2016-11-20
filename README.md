@@ -1,2 +1,2 @@
 # Leet-Code
-My solutions to the problems on www.leetcode.com (using C#)
+My solutions to the problems on http://www.leetcode.com (using C#)
