@@ -1,4 +1,4 @@
-# ðŸŽ„ Advent of Code
+# :christmas_tree: Advent of Code
 
 ## What is Advent of Code?
 
