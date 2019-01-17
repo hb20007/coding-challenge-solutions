@@ -6,6 +6,6 @@ My solutions to programming problems and puzzles (LeetCode, Advent of Code)
 
 ## Let's Connect
 
-H. Z. Sababa â€” hb20007 â€” hzsababa@outlook.com
+H. Z. Sababa — hb20007 — hzsababa@outlook.com
 
 [GitHub](https://github.com/hb20007) | [Medium](https://medium.com/@hb20007) | [LinkedIn](https://www.linkedin.com/in/hanna-sababa/)

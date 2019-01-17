@@ -1,4 +1,4 @@
-# Advent of Code
+# ðŸŽ„ Advent of Code
 
 ## What is Advent of Code?
 
