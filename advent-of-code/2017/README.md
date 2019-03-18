@@ -10,5 +10,9 @@ Collect stars by solving puzzles. Two puzzles will be made available on each day
 
 ## Days
 
-- [Day 1: ](day-01/)
-TBC
+- [Day 1: Inverse Captcha](day-01/)
+- [Day 2: Corruption Checksum](day-02/)
+- [Day 3: Spiral Memory](day-03/)
+- [Day 4: High-Entropy Passphrases](day-04/)
+- [Day 5: A Maze of Twisty Trampolines, All Alike](day-05/)
+- [Day 6: Memory Reallocation](day-06/)
