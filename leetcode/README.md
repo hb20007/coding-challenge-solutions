@@ -3,7 +3,7 @@ My solutions to the problems on https://leetcode.com/problemset/all/
 
 ## Problems
 
-| # | Title | Difficulty | 
+| # | Title | Difficulty |
 |:---:|:---:|:---:|
 | 1 | [Two Sum](01-two-sum.py) | :star: |
 | 2 | [Add Two Numbers](02-add-two-numbers.py) | :star::star: |
