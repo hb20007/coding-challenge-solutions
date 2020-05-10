@@ -2,6 +2,7 @@ import unittest
 from partOne import calc_fuel
 from partTwo import calc_fuel_loop
 
+
 class TestDay1(unittest.TestCase):
 	def test_part1(self):
 		tests = [
@@ -26,5 +27,6 @@ class TestDay1(unittest.TestCase):
 			with self.subTest(test=test):
 				self.assertEqual(calc_fuel_loop(test[0]), test[1])
 
+
 if __name__ == '__main__':
-    unittest.main()
+	unittest.main()

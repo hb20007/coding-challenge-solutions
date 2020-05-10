@@ -1,6 +1,7 @@
 from partOne import distance_to_closest_intersection
 from partTwo import steps_to_best_intersection
 
+
 with open('input.txt') as f:
 	WIRE_1_PATH, WIRE_2_PATH = [
 		wire_path.split(',')

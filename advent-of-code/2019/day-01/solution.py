@@ -1,6 +1,7 @@
 from partOne import calc_fuel
 from partTwo import calc_fuel_loop
 
+
 with open('input.txt') as f:
 	MASSES = [int(line) for line in f.readlines()]
 

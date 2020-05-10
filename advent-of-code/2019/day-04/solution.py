@@ -1,6 +1,7 @@
 from partOne import count_possible_pwds
 from partTwo import count_possible_pwds2
 
+
 with open('input.txt') as f:
 	range_start, range_end = [int(num) for num in f.read().split('-')]
 

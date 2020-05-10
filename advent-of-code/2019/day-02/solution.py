@@ -1,6 +1,7 @@
 from partOne import parse_intcodes
 from partTwo import find_noun_and_verb
 
+
 with open('input.txt') as f:
 	INTS = [int(num) for num in f.read().split(',')]
 

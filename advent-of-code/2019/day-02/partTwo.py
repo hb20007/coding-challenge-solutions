@@ -1,6 +1,7 @@
 from typing import List
 from partOne import parse_intcodes
 
+
 def find_noun_and_verb(
 	intcodes: List[int],
 	target: int,

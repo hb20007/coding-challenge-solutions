@@ -2,6 +2,7 @@ import unittest
 from partOne import meets_criteria
 from partTwo import meets_criteria2
 
+
 class TestDay4(unittest.TestCase):
 	def test_part1(self):
 		tests = [
@@ -28,5 +29,6 @@ class TestDay4(unittest.TestCase):
 			with self.subTest(test=test):
 				self.assertEqual(meets_criteria2(test[0]), test[1])
 
+
 if __name__ == '__main__':
-    unittest.main()
+	unittest.main()

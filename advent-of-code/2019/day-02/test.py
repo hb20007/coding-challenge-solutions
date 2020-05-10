@@ -2,6 +2,7 @@ import unittest
 from partOne import parse_intcodes
 from partTwo import find_noun_and_verb
 
+
 class TestDay2(unittest.TestCase):
 	def test_part1(self):
 		tests = [
@@ -15,5 +16,6 @@ class TestDay2(unittest.TestCase):
 			with self.subTest(test=test):
 				self.assertEqual(parse_intcodes(test[0]), test[1])
 
+
 if __name__ == '__main__':
-    unittest.main()
+	unittest.main()
