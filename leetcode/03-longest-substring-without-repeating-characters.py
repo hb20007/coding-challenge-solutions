@@ -25,7 +25,7 @@ class Solution:
         """
         # SOLUTION 1: FIRST ATTEMPT
         longest = 0
-        buffer = "" # buffer = set() # (Same performance)
+        buffer = ""    # buffer = set() # (Same performance)
         for c1 in s:
             for c2 in s:
                 if c2 not in buffer:
@@ -38,7 +38,6 @@ class Solution:
                     break
         return longest
 
-
         # SOLUTION 2: A DIFFERENT APPROACH
         # Iterate through all possible substrings and check them.
         # Time complexity: O(n^3) (Worse than previous solution)
@@ -48,7 +47,6 @@ class Solution:
                 if self.helper_all_unique(s, i, j):
                     ans = max(ans, j - i)
         return ans
-
 
         # SOLUTION 3: SLIDING WINDOW
         # In the naive approaches, we repeatedly check a substring to see if it has duplicate character. But it is unnecessary. If a substring s_{ij}s from index i to j - 1 is already checked to have no duplicate characters, we only need to check if s[j] is already in the substring s.

@@ -12,6 +12,7 @@ There are 4 cases
 
 class Solution:
     INT_MAX, INT_MIN = 0x7FFFFFFF, 0x80000000   # Python doesn't treat 0x80000000 as a signed int so we need to add the minus sign on our own when we use it.
+
     def myAtoi(self, str):
         """
         :type str: str

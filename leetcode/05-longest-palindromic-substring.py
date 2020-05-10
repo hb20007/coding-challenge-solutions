@@ -20,7 +20,6 @@ class Solution:
                 return False
         return True
 
-
     def helper_expand_around_center_to_find_longest_p(self, s, left, right):
         """
         :type s: str
@@ -71,7 +70,6 @@ class Solution:
         #                 break
         #             substr = s[i:i + len(substr) + 1]   # Add a character to the substring
         #     i += 1
-
 
         # SOLUTION 3: DYNAMIC PROGRAMMING (DP)
         # Idea: Consider the case ”ababa”. If we already knew that ”bab” is a palindrome, it is obvious that ”ababa” must be a palindrome since the two left and right end letters are the same. We start with 1 letter palindromes and then move to 2, 3 letter ones etc.

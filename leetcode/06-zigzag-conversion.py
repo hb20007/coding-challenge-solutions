@@ -36,7 +36,6 @@ class Solution:
                     res += s[second_j]
         return res
 
-
         # SOLUTION 2: BETTER APPROACH (2 CASES: GOING DOWN, GOING UP DIAGONALLY)
         # Create an array of strings with n strings where each string will store a row of the zig zag representation. Traverse the string and in order to decide in which row each character goes, check if you are going down (it goes to the next row) or if we are going up (it goes to the previous row).
         # Runtime on leetcode: 80ms

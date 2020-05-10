@@ -26,7 +26,6 @@ class Solution:
 
         return ans * sign if ans < 2**31 else 0     # NB how we avoid checking against the lowest possible int by adding the sign only at the end.
 
-
         # SOLUTION 2: HACKY SOLUTION
         # Runtime: 60ms
         xs = str(x)
