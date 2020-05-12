@@ -1,4 +1,5 @@
-const partTwo = input => {
+/* eslint consistent-return: "off" */
+const partTwo = (input) => {
   input = input.split('\n');
 
   const noOfIds = input.length;

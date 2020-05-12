@@ -1,9 +1,11 @@
 const fs = require('fs');
-const INPUT = fs.readFileSync(__dirname + '/input.txt', 'utf-8').split('\n');
+
+const INPUT = fs.readFileSync(`${__dirname}/input.txt`, 'utf-8').split('\n');
+
 const COMMANDS_REGEX = /(turn on|turn off|toggle) (\d+),(\d+) through (\d+),(\d+)/;
 const GRID_LENGTH = 1000;
 
-const parseCommand = string => {
+const parseCommand = (string) => {
   const command = string.match(COMMANDS_REGEX);
   return {
     command: command[1],
@@ -16,7 +18,7 @@ const parseCommand = string => {
 
 const lights = new Uint8Array(GRID_LENGTH * GRID_LENGTH);
 
-INPUT.forEach(str => {
+INPUT.forEach((str) => {
   const commandObj = parseCommand(str);
 
   for (let x = commandObj.x1; x <= commandObj.x2; x++) {

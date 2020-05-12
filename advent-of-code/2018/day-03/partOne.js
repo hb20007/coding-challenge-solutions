@@ -1,8 +1,8 @@
-const partOne = input => {
+const partOne = (input) => {
   input = input
     .split('\n')
-    .map(n => n.split(/\s+/))
-    .map(arr => {
+    .map((n) => n.split(/\s+/))
+    .map((arr) => {
       const pos = arr[2]
         .replace(':', '')
         .split(',')
@@ -13,7 +13,7 @@ const partOne = input => {
 
   const coordMap = {};
 
-  input.forEach(arr => {
+  input.forEach((arr) => {
     for (let i = arr[0]; i < arr[0] + arr[2]; i++) {
       for (let j = arr[1]; j < arr[1] + arr[3]; j++) {
         const coord = `${i},${j}`;
@@ -22,7 +22,7 @@ const partOne = input => {
     }
   });
 
-  return Object.values(coordMap).filter(val => val > 1).length;
+  return Object.values(coordMap).filter((val) => val > 1).length;
 };
 
 module.exports = partOne;

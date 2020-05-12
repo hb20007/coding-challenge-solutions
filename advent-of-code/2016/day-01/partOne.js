@@ -1,11 +1,14 @@
 const fs = require('fs');
+
 const instructions = fs
   .readFileSync(`${__dirname}/input.txt`)
   .toString()
   .split(', ')
-  .map(str => {
-    return { direction: str[0], blocks: parseInt(str.substring(1)) };
-  });
+  .map(
+    (str) => ({
+      direction: str[0], blocks: parseInt(str.substring(1))
+    })
+  );
 
 const DIRECTIONS = {
   N: {
@@ -43,6 +46,8 @@ const result = instructions.reduce(
       case 'W':
         acc.h -= instruction.blocks;
         break;
+      default:
+        console.log('Something weird is going on...');
     }
 
     return acc;

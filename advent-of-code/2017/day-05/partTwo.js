@@ -1,6 +1,6 @@
-const partTwo = offsets => {
-  let currentI = 0,
-    steps = 0;
+const partTwo = (offsets) => {
+  let currentI = 0;
+  let steps = 0;
 
   while (0 <= currentI && currentI < offsets.length) {
     const currentOffset = offsets[currentI];

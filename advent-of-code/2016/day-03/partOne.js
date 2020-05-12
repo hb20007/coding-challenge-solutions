@@ -1,4 +1,5 @@
 const fs = require('fs');
+
 const vertices = fs
   .readFileSync(`${__dirname}/input.txt`)
   .toString()

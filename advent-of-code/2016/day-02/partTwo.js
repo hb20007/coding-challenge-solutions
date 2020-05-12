@@ -1,9 +1,10 @@
 const fs = require('fs');
+
 const instructions = fs
   .readFileSync(`${__dirname}/input.txt`)
   .toString()
-  .split(`\n`)
-  .map(line => line.split(''));
+  .split('\n')
+  .map((line) => line.split(''));
 
 const DIALS = [
   [null, null, 1, null, null],
@@ -17,8 +18,8 @@ const MAX_INDEX = DIALS.length - 1;
 const pos = { x: 0, y: 2 };
 let code = '';
 
-instructions.forEach(line => {
-  line.forEach(instruction => {
+instructions.forEach((line) => {
+  line.forEach((instruction) => {
     switch (instruction) {
       case 'U':
         if (pos.y > 0 && DIALS[pos.y - 1][pos.x]) {
@@ -40,6 +41,8 @@ instructions.forEach(line => {
           pos.x++;
         }
         break;
+      default:
+        console.log('What is going on?');
     }
   });
 

@@ -1,5 +1,5 @@
 const partTwo = (input, limit) => {
-  input = input.split('\n').map(line => line.split(', ').map(Number));
+  input = input.split('\n').map((line) => line.split(', ').map(Number));
 
   const xCoords = input.map(([x]) => x);
   const yCoords = input.map(([, y]) => y);

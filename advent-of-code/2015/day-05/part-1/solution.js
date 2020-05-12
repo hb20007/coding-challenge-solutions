@@ -1,16 +1,17 @@
 const fs = require('fs');
+
 const INPUT = fs
-  .readFileSync(__dirname + '/input.txt')
+  .readFileSync(`${__dirname}/input.txt`)
   .toString()
   .split('\n');
 
 const VOWELS = ['a', 'e', 'i', 'o', 'u'];
 const DOUBLE_LETTERS = 'abcdefghijklmnopqrstuvwxyz'
   .split('')
-  .map(item => item + item);
+  .map((item) => item + item);
 const BAD_PAIRS = ['ab', 'cd', 'pq', 'xy'];
 
-const hasThreeVowels = string =>
+const hasThreeVowels = (string) =>
   string
     .split('')
     .reduce(
@@ -18,12 +19,12 @@ const hasThreeVowels = string =>
         VOWELS.indexOf(char) === -1 ? vowelCount : ++vowelCount,
       0
     ) >= 3;
-const hasDoubleLetter = string =>
-  DOUBLE_LETTERS.some(item => string.indexOf(item) !== -1);
-const hasBadPair = string =>
-  BAD_PAIRS.some(item => string.indexOf(item) !== -1);
+const hasDoubleLetter = (string) =>
+  DOUBLE_LETTERS.some((item) => string.indexOf(item) !== -1);
+const hasBadPair = (string) =>
+  BAD_PAIRS.some((item) => string.indexOf(item) !== -1);
 
-const isNiceString = string =>
+const isNiceString = (string) =>
   hasThreeVowels(string) && hasDoubleLetter(string) && !hasBadPair(string);
 
 const result = INPUT.reduce(

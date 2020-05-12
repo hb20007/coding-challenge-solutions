@@ -1,11 +1,12 @@
-const partTwo = banks => {
+/* eslint consistent-return: "off" */
+const partTwo = (banks) => {
   const patterns = {};
 
   let snapshot = banks.join(':');
 
   while (!patterns[snapshot]) {
     let bank = Math.max(...banks);
-    let currentIndex = banks.findIndex(x => x === bank);
+    let currentIndex = banks.findIndex((x) => x === bank);
 
     if (!patterns[snapshot]) {
       patterns[snapshot] = {
@@ -31,7 +32,7 @@ const partTwo = banks => {
       return patterns[snapshot].firstTimeSeenBefore + 1;
     }
 
-    Object.keys(patterns).forEach(x => patterns[x].firstTimeSeenBefore++);
+    Object.keys(patterns).forEach((x) => patterns[x].firstTimeSeenBefore++);
   }
 };
 

@@ -1,15 +1,15 @@
-const partTwo = input => {
+const partTwo = (input) => {
   input = input
     .split('\n')
-    .map(event => event.trim())
+    .map((event) => event.trim())
     .sort()
-    .map(event =>
+    .map((event) => (
       event
         .match(
           /\[(\d{4})-(\d{2})-(\d{2}) (\d{2}):(\d{2})\] (\w+) #?(\d+\d+|\w+)/
         )
         .slice(1)
-    );
+    ));
 
   const sleepMinutes = {};
 
@@ -21,7 +21,7 @@ const partTwo = input => {
     const action = shift[5].toLowerCase();
 
     if (action === 'guard') {
-      currentGuardId = shift[6];
+      currentGuardId = shift[6]; // eslint-disable-line prefer-destructuring
 
       if (!sleepMinutes[currentGuardId]) {
         sleepMinutes[currentGuardId] = {};
@@ -45,7 +45,7 @@ const partTwo = input => {
   let sleepiestMinute = -1;
   let maxSleepCount = -1;
 
-  Object.keys(sleepMinutes).forEach(guardId => {
+  Object.keys(sleepMinutes).forEach((guardId) => {
     Object.entries(sleepMinutes[guardId]).forEach(
       ([minute, currentSleepCount]) => {
         if (currentSleepCount > maxSleepCount) {

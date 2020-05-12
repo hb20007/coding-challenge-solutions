@@ -1,19 +1,17 @@
-const filterByLetterCount = (inputArray, count) => {
-  return inputArray.filter(id => {
-    const letters = id.split('');
-    const letterMap = {};
+const partOne = (input) => {
+  const filterByLetterCount = (inputArray, count) => (
+    inputArray.filter((id) => {
+      const letters = id.split('');
+      const letterMap = {};
 
-    letters.forEach(letter => {
-      letterMap[letter] = letterMap[letter] + 1 || 1;
-    });
+      letters.forEach((letter) => {
+        letterMap[letter] = letterMap[letter] + 1 || 1;
+      });
 
-    return letters.find(letter => {
-      return letterMap[letter] === count;
-    });
-  });
-};
+      return letters.find((letter) => letterMap[letter] === count);
+    })
+  );
 
-const partOne = input => {
   input = input.split('\n');
 
   return (

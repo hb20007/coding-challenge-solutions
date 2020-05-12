@@ -1,5 +1,5 @@
-const partOne = captcha => {
-  const circularCaptcha = captcha.slice(); // Shallow copy because partTwo will also use the captcha Array
+const partOne = (captcha) => {
+  const circularCaptcha = captcha.slice(); // Shallow copy
   circularCaptcha.push(circularCaptcha[0]);
 
   return circularCaptcha.reduce(

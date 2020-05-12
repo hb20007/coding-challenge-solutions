@@ -1,12 +1,14 @@
 const fs = require('fs');
-const INPUT = fs.readFileSync(__dirname + '/input.txt', 'utf-8').split('\n');
+
+const INPUT = fs.readFileSync(`${__dirname}/input.txt`, 'utf-8').split('\n');
+
 const DIRECTION_REGEX = /(\w+) to (\w+) = (\d+)/;
 
 // Takes input and builds set of all places that need to be visited
-const buildPlacesSet = input => {
+const buildPlacesSet = (input) => {
   const places = new Set();
 
-  input.forEach(direction => {
+  input.forEach((direction) => {
     const parsed = direction.match(DIRECTION_REGEX);
     places.add(parsed[1]).add(parsed[2]);
   });
@@ -15,10 +17,10 @@ const buildPlacesSet = input => {
 };
 
 // Takes input and builds map of all possible routes between 2 points
-const buildDistanceMap = input => {
+const buildDistanceMap = (input) => {
   const map = new Map();
 
-  input.forEach(direction => {
+  input.forEach((direction) => {
     const parsed = direction.match(DIRECTION_REGEX);
     map.set(`${parsed[1]} -> ${parsed[2]}`, +parsed[3]);
     map.set(`${parsed[2]} -> ${parsed[1]}`, +parsed[3]);
@@ -28,28 +30,27 @@ const buildDistanceMap = input => {
 };
 
 // Takes set of items and builds array with all possible permutations between them
-const permute = set => {
+const permuteSet = (set) => {
   const array = Array.from(set);
 
   // This is a reducer function. It doesn't matter than it has the same name as its parent function due to scoping. Third argument: current index, 4th argument: source array.
-  const permute = (res, item, key, arr) => {
-    return res.concat(
-      (arr.length > 1 &&
-        arr
+  const permute = (res, item, key, arr) =>
+    res.concat(
+      (arr.length > 1
+        && arr
           .slice(0, key)
           .concat(arr.slice(key + 1))
           .reduce(permute, [])
-          .map(perm => [item].concat(perm))) ||
-        item
+          .map((perm) => [item].concat(perm)))
+        || item
     );
-  };
 
   return array.reduce(permute, []);
 };
 
 const places = buildPlacesSet(INPUT);
 const distances = buildDistanceMap(INPUT);
-const allPossibleRoutes = permute(places);
+const allPossibleRoutes = permuteSet(places);
 
 const allPossibleDistances = allPossibleRoutes.reduce((acc, route) => {
   let total = 0;

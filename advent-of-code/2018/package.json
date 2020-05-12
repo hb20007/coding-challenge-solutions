@@ -1,0 +1,13 @@
+{
+  "name": "aoc2018",
+  "version": "1.0.0",
+  "description": "aoc2018 solns",
+  "author": "hb20007",
+  "license": "MIT",
+  "devDependencies": {
+    "eslint": "^6.8.0",
+    "eslint-config-airbnb-base": "^14.1.0",
+    "eslint-plugin-import": "^2.20.2",
+    "mocha": "^7.1.2"
+  }
+}

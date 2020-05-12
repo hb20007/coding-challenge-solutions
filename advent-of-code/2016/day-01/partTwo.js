@@ -1,11 +1,14 @@
 const fs = require('fs');
+
 const instructions = fs
   .readFileSync(`${__dirname}/input.txt`)
   .toString()
   .split(', ')
-  .map(str => {
-    return { direction: str[0], blocks: parseInt(str.substring(1)) };
-  });
+  .map(
+    (str) => ({
+      direction: str[0], blocks: parseInt(str.substring(1))
+    })
+  );
 
 const DIRECTIONS = {
   N: {
@@ -32,39 +35,47 @@ const { visits } = instructions.reduce(
     state.pointing = DIRECTIONS[state.pointing][instruction.direction];
 
     switch (state.pointing) {
-      case 'N':
+      case 'N': {
         const newV_N = state.v + instruction.blocks;
         for (let i = state.v + 1; i <= newV_N; i++) {
           state.visits.push(`${state.h},${i}`);
         }
         state.v = newV_N;
         break;
-      case 'S':
+      }
+      case 'S': {
         const newV_S = state.v - instruction.blocks;
         for (let i = state.v - 1; i >= newV_S; i--) {
           state.visits.push(`${state.h},${i}`);
         }
         state.v = newV_S;
         break;
-      case 'E':
+      }
+      case 'E': {
         const newH_E = state.h + instruction.blocks;
         for (let i = state.h + 1; i <= newH_E; i++) {
           state.visits.push(`${i},${state.v}`);
         }
         state.h = newH_E;
         break;
-      case 'W':
+      }
+      case 'W': {
         const newH_W = state.h - instruction.blocks;
         for (let i = state.h - 1; i >= newH_W; i--) {
           state.visits.push(`${i},${state.v}`);
         }
         state.h = newH_W;
         break;
+      }
+      default:
+        console.log('This does not make sense.');
     }
 
     return state;
   },
-  { pointing: 'N', h: 0, v: 0, visits: ['0,0'] }
+  {
+    pointing: 'N', h: 0, v: 0, visits: ['0,0']
+  }
 );
 
 const firstDup = visits

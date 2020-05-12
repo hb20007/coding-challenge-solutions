@@ -1,4 +1,4 @@
-const partOne = banks => {
+const partOne = (banks) => {
   const patterns = {};
 
   let snapshot = banks.join(':');
@@ -6,7 +6,7 @@ const partOne = banks => {
 
   while (!patterns[snapshot]) {
     let bank = Math.max(...banks);
-    let currentIndex = banks.findIndex(x => x === bank);
+    let currentIndex = banks.findIndex((x) => x === bank);
 
     banks[currentIndex] = 0;
     currentIndex++;

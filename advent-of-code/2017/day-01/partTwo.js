@@ -1,4 +1,4 @@
-const partTwo = captcha => {
+const partTwo = (captcha) => {
   const offset = captcha.length / 2;
 
   return captcha.reduce(

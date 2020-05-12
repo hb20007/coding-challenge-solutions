@@ -1,6 +1,7 @@
 const fs = require('fs');
+
 const INPUT = fs
-  .readFileSync(__dirname + '/input.txt')
+  .readFileSync(`${__dirname}/input.txt`)
   .toString()
   .split('');
 

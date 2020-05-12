@@ -22,7 +22,7 @@ describe('Part 1', () => {
 [1518-11-05 00:45] falls asleep
 [1518-11-05 00:55] wakes up`;
     assert.strictEqual(partOne(input), 240);
-  })
+  });
 });
 
 describe('Part 2', () => {
@@ -45,5 +45,5 @@ describe('Part 2', () => {
 [1518-11-05 00:45] falls asleep
 [1518-11-05 00:55] wakes up`;
     assert.strictEqual(partTwo(input), 4455);
-  })
+  });
 });

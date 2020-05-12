@@ -1,4 +1,5 @@
 const fs = require('fs');
+
 const lines = fs
   .readFileSync(`${__dirname}/input.txt`)
   .toString()
@@ -27,9 +28,9 @@ for (let i = 0; i < lines.length; i += 3) {
 
 function isTriangle(triangle) {
   return (
-    triangle[0] + triangle[1] > triangle[2] &&
-    triangle[1] + triangle[2] > triangle[0] &&
-    triangle[0] + triangle[2] > triangle[1]
+    triangle[0] + triangle[1] > triangle[2]
+    && triangle[1] + triangle[2] > triangle[0]
+    && triangle[0] + triangle[2] > triangle[1]
   );
 }
 

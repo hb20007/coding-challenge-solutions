@@ -1,11 +1,14 @@
-// Implemented this way because *the device might need to repeat its list of frequency changes many times before a duplicate frequency is found.*
-const partTwo = input => {
+// Implemented this way because
+// "the device might need to repeat its list of frequency changes many times
+// before a duplicate frequency is found".
+const partTwo = (input) => {
   input = input.split('\n').map(Number);
 
-  let currentFreq = 0,
-    i = 0;
-  let visited = { 0: true };
+  let currentFreq = 0;
+  let i = 0;
+  const visited = { 0: true };
 
+  // eslint-disable-next-line no-constant-condition
   while (true) {
     currentFreq += input[i];
 

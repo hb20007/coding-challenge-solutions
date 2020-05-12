@@ -1,8 +1,8 @@
-const partOne = input => {
-  input = input.split('\n').map(line => line.split(', ').map(Number));
+const partOne = (input) => {
+  input = input.split('\n').map((line) => line.split(', ').map(Number));
 
-  const xCoords = input.map(([x]) => x); // Destructuring but we only take the first element, similar to let [x] = [1, 2] where x = 1
-  const yCoords = input.map(([, y]) => y); // Same but second element
+  const xCoords = input.map(([x]) => x); // Array destructuring
+  const yCoords = input.map(([, y]) => y);
   const minX = Math.min(...xCoords);
   const maxX = Math.max(...xCoords);
   const minY = Math.min(...yCoords);
@@ -15,13 +15,15 @@ const partOne = input => {
   // Get the nearest point(s) of a given pair of coordinates
   function getNearestPoints(x, y) {
     const distances = input.map(
-      point => Math.abs(point[0] - x) + Math.abs(point[1] - y)
+      (point) => Math.abs(point[0] - x) + Math.abs(point[1] - y)
     );
     const minDistance = Math.min(...distances);
     return input.filter((_, i) => distances[i] === minDistance);
   }
 
-  // Finding points with infinite areas (if a point is the nearest to some safe distance from the area with all the points, then that point has an infinite area):
+  // Finding points with infinite areas
+  // (if a point is the nearest to some safe distance from the area with all the points,
+  // then that point has an infinite area):
   for (let x = minX; x <= maxX; x++) {
     let point = getNearestPoints(x, minY - diffY);
     if (point.length === 1) infiniteAreaPoints.add(point);
@@ -48,7 +50,8 @@ const partOne = input => {
     }
   }
 
-  return Math.max(...areas.filter(Boolean)); // The filter removes all falsy (false, null, undefined, 0, NaN, '') items.
+  // The filter removes all falsy (false, null, undefined, 0, NaN, '') items:
+  return Math.max(...areas.filter(Boolean));
 };
 
 module.exports = partOne;

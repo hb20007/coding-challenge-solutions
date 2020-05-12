@@ -1,4 +1,4 @@
-const partOne = input => {
+const partOne = (input) => {
   const [players, marbles] = input.split(/\D+/).map(Number);
 
   const scores = new Uint32Array(players);
@@ -9,7 +9,8 @@ const partOne = input => {
   for (let value = 1; value <= marbles; value++) {
     if (value % 23) {
       current = ((current + 1) % circleLength) + 1;
-      circle.copyWithin(current + 1, current, circleLength); // Array.prototype.copyWithin(): Shallow copy within the same array to index current + 1: circleLength elements starting at index current.
+      // Array.prototype.copyWithin(): https://www.geeksforgeeks.org/javascript-array-copywithin/
+      circle.copyWithin(current + 1, current, circleLength);
       circle[current] = value;
       circleLength++;
     } else {

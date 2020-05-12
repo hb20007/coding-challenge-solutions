@@ -1,4 +1,4 @@
-const partOne = input => {
+const partOne = (input) => {
   input = input.split(' ').map(Number);
 
   function buildTree(startIndex) {

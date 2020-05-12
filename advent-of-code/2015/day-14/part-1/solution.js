@@ -1,9 +1,11 @@
 const fs = require('fs');
-const INPUT = fs.readFileSync(__dirname + '/input.txt', 'utf-8').split('\n');
+
+const INPUT = fs.readFileSync(`${__dirname}/input.txt`, 'utf-8').split('\n');
+
 const REINDEER_REGEX = /\d+/g;
 const TIME = 2503;
 
-const getReindeerDistance = input => {
+const getReindeerDistance = (input) => {
   const args = input.match(REINDEER_REGEX).map(Number);
   const speed = args[0];
   const time = args[1];

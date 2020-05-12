@@ -1,16 +1,18 @@
 const fs = require('fs');
-const rooms = fs
-  .readFileSync(`${__dirname}/input.txt`)
-  .toString()
-  .split(`\n`)
-  .map(extractInfo);
 
 function extractInfo(room) {
+  // eslint-disable-next-line no-unused-vars
   const [_, name, sectorId, sum] = room.match(
-    /([a-z\-]+)([0-9]+)\[([a-z]{5})\]/
+    /([a-z-]+)([0-9]+)\[([a-z]{5})\]/
   );
   return { name, sectorId, sum };
 }
+
+const rooms = fs
+  .readFileSync(`${__dirname}/input.txt`)
+  .toString()
+  .split('\n')
+  .map(extractInfo);
 
 function sortByKey(item1, item2) {
   const count1 = item1.count;
@@ -39,7 +41,7 @@ function sortByKey(item1, item2) {
 function checksum(roomName) {
   return roomName
     .split('')
-    .filter(char => /[a-z]/.test(char))
+    .filter((char) => /[a-z]/.test(char))
     .reduce(
       (info, char) => {
         const [chars, charCounts] = info;
@@ -59,7 +61,7 @@ function checksum(roomName) {
     .sort(sortByKey)
     .reverse()
     .slice(0, 5)
-    .map(charCountTuple => charCountTuple.char)
+    .map((charCountTuple) => charCountTuple.char)
     .join('');
 }
 
@@ -71,7 +73,7 @@ function realName(name, rotations) {
   const chars = 'abcdefghijklmnopqrstuvwxyz';
   return name
     .split('')
-    .map(char => {
+    .map((char) => {
       const index = chars.indexOf(char);
 
       if (index > -1) {
@@ -82,7 +84,7 @@ function realName(name, rotations) {
     .join('');
 }
 
-rooms.forEach(room => {
+rooms.forEach((room) => {
   if (checkRoom(room.name, room.sum)) {
     console.log(realName(room.name, room.sectorId));
   }

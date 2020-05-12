@@ -1,28 +1,29 @@
 const fs = require('fs');
-const INPUT = fs.readFileSync(__dirname + '/input.txt', 'utf-8').split('\n');
+
+const INPUT = fs.readFileSync(`${__dirname}/input.txt`, 'utf-8').split('\n');
+
 const PERSON_ATTRIBUTES_REGEX = /(\w+) would (\w+) (\d+) happiness units by sitting next to (\w+)./;
 
 // Generate all possible permutations for an array
-const permute = input => {
+const permuteArr = (input) => {
   const array = Array.from(input);
-  const permute = (res, item, key, arr) => {
-    return res.concat(
-      (arr.length > 1 &&
-        arr
+  const permute = (res, item, key, arr) =>
+    res.concat(
+      (arr.length > 1
+        && arr
           .slice(0, key)
           .concat(arr.slice(key + 1))
           .reduce(permute, [])
-          .map(perm => [item].concat(perm))) ||
-        item
+          .map((perm) => [item].concat(perm)))
+        || item
     );
-  };
 
   return array.reduce(permute, []);
 };
 
 // Parse input and return map with attributes of each person
-const getPersonAttributes = input => {
-  return input.reduce((map, person) => {
+const getPersonAttributes = (input) =>
+  input.reduce((map, person) => {
     const parsed = person.match(PERSON_ATTRIBUTES_REGEX);
     const name = parsed[1];
     const isLose = parsed[2] === 'lose';
@@ -31,25 +32,23 @@ const getPersonAttributes = input => {
 
     return map.set(`${name} -> ${neighbour}`, isLose ? -count : count);
   }, new Map());
-};
 
 // Get attendees list
-const getAttendees = input => {
-  return input.reduce((set, person) => {
+const getAttendees = (input) =>
+  input.reduce((set, person) => {
     const parsed = person.match(PERSON_ATTRIBUTES_REGEX);
     return set.add(parsed[1]);
   }, new Set());
-};
 
 // Get all persons' attributes
 const personAttributes = getPersonAttributes(INPUT);
 
 // Get all possible permutations of the guests
-const allPossiblePermutations = permute(getAttendees(INPUT));
+const allPossiblePermutations = permuteArr(getAttendees(INPUT));
 
 const totalHappiness = allPossiblePermutations.reduce(
-  (totalHappiness, permutation) => {
-    const total = permutation.reduce((total, person, index, arr) => {
+  (totalHappinessAcc, permutation) => {
+    const finalTotal = permutation.reduce((total, person, index, arr) => {
       const leftOne = arr[index - 1 < 0 ? arr.length - 1 : index - 1];
       const rightOne = arr[index + 1 > arr.length - 1 ? 0 : index + 1];
 
@@ -59,7 +58,7 @@ const totalHappiness = allPossiblePermutations.reduce(
       return total;
     }, 0);
 
-    return total > totalHappiness ? total : totalHappiness;
+    return finalTotal > totalHappinessAcc ? finalTotal : totalHappinessAcc;
   },
   0
 );

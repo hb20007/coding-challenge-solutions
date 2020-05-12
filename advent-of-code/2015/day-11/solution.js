@@ -1,35 +1,35 @@
 const INPUT = 'hxbxwxba';
 
 // Rules for correct password
-const hasStraightIncreasingSymbols = string =>
+const hasStraightIncreasingSymbols = (string) =>
   string
     .split('')
-    .map(char => char.charCodeAt(0))
+    .map((char) => char.charCodeAt(0))
     .some(
       (_, index, arr) =>
-        arr[index] === arr[index + 1] - 1 &&
-        arr[index + 1] === arr[index + 2] - 1
+        arr[index] === arr[index + 1] - 1
+        && arr[index + 1] === arr[index + 2] - 1
     );
-const hasRestrictedSymbols = string => /i|o|l/.test(string);
-const hasPairs = string => /(\w)\1.*(\w)\2/.test(string);
+const hasRestrictedSymbols = (string) => /i|o|l/.test(string);
+const hasPairs = (string) => /(\w)\1.*(\w)\2/.test(string);
 
 // Increments one char
-const incrementChar = char =>
+const incrementChar = (char) =>
   char === 'z' ? 'a' : String.fromCharCode(char.charCodeAt(0) + 1);
 
 // Increments the whole string by one char recursively
-const incrementString = string => {
+const incrementString = (string) => {
   const nextChar = incrementChar(string.slice(-1));
   return nextChar === 'a'
-    ? incrementString(string.slice(0, -1)) + 'a'
-    : string.slice(0, -1) + nextChar;
+    ? `${incrementString(string.slice(0, -1))}a`
+    : `${string.slice(0, -1)}${nextChar}`;
 };
 
 // Checks if password is valid
-const isValidPassword = string =>
-  hasStraightIncreasingSymbols(string) &&
-  !hasRestrictedSymbols(string) &&
-  hasPairs(string);
+const isValidPassword = (string) =>
+  hasStraightIncreasingSymbols(string)
+  && !hasRestrictedSymbols(string)
+  && hasPairs(string);
 
 let result = INPUT;
 while (!isValidPassword(result)) result = incrementString(result);

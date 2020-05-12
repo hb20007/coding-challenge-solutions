@@ -1,5 +1,5 @@
 // The bottom right corner of each spiral is the sequence of odd squares.
-const partOne = num => {
+const partOne = (num) => {
   if (num === 1) return 0;
 
   // Find the largest odd square smaller than input:
@@ -12,17 +12,20 @@ const partOne = num => {
   const firstSteps = oddSqBase;
   const restSteps = firstSteps + 1;
 
-  const bottomRight = oddSquare + 1,
-    topRight = bottomRight + oddSqBase,
-    topLeft = topRight + oddSqBase + 1,
-    bottomLeft = topLeft + oddSqBase + 1;
+  const bottomRight = oddSquare + 1;
+  const topRight = bottomRight + oddSqBase;
+  const topLeft = topRight + oddSqBase + 1;
+  const bottomLeft = topLeft + oddSqBase + 1;
 
   const firstDistanceToCenter = (oddSqBase - 3) / 2 + 1;
   const restDistanceToCenter = firstDistanceToCenter + 1;
 
   function getSteps(baseCorner, steps, distanceToCenter) {
-    const offset =
-      -Math.abs(num - baseCorner - distanceToCenter) + distanceToCenter; // I got this formula by thinking graphically about the function I want. The interplay between the negative sign and the absolute value creates the logic.
+    const offset = (
+      // I got this formula by thinking graphically about the function I want.
+      // The interplay between the negative sign and the absolute value creates the logic:
+      -Math.abs(num - baseCorner - distanceToCenter) + distanceToCenter
+    );
     return steps - offset;
   }
 
@@ -36,10 +39,10 @@ const partOne = num => {
     }
 
     return getSteps(baseCorner, restSteps, restDistanceToCenter);
-  } else {
-    // First quarter of spiral
-    return getSteps(bottomRight, firstSteps, firstDistanceToCenter);
   }
+
+  // First quarter of spiral
+  return getSteps(bottomRight, firstSteps, firstDistanceToCenter);
 };
 
 module.exports = partOne;
