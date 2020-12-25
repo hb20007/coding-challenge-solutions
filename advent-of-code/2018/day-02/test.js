@@ -1,4 +1,4 @@
-const assert = require('assert');
+require('chai').should();
 const partOne = require('./partOne');
 const partTwo = require('./partTwo');
 
@@ -11,7 +11,7 @@ abcccd
 aabcdd
 abcdee
 abababx`;
-    assert.strictEqual(partOne(input), 12);
+    partOne(input).should.equal(12);
   });
 });
 
@@ -24,6 +24,6 @@ pqrst
 fguij
 axcye
 wvxyz`;
-    assert.strictEqual(partTwo(input), 'fgij');
+    partTwo(input).should.equal('fgij');
   });
 });

@@ -1,4 +1,4 @@
-const assert = require('assert');
+require('chai').should();
 const partOne = require('./partOne');
 const partTwo = require('./partTwo');
 
@@ -10,7 +10,7 @@ describe('Part 1', () => {
 3, 4
 5, 5
 8, 9`;
-    assert.strictEqual(partOne(input), 17);
+    partOne(input).should.equal(17);
   });
 });
 
@@ -22,6 +22,6 @@ describe('Part 2', () => {
 3, 4
 5, 5
 8, 9`;
-    assert.strictEqual(partTwo(input, 32), 16);
+    partTwo(input, 32).should.equal(16);
   });
 });

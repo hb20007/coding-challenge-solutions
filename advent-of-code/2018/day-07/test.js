@@ -1,4 +1,4 @@
-const assert = require('assert');
+require('chai').should();
 const partOne = require('./partOne');
 
 describe('Part 1', () => {
@@ -11,6 +11,6 @@ Step B must be finished before step E can begin.
 Step D must be finished before step E can begin.
 Step F must be finished before step E can begin.`;
 
-    assert.strictEqual(partOne(input), 'CABDFE');
+    partOne(input).should.equal('CABDFE');
   });
 });

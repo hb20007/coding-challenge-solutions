@@ -1,4 +1,4 @@
-const assert = require('assert');
+require('chai').should();
 const partOne = require('./partOne');
 const partTwo = require('./partTwo');
 
@@ -21,7 +21,7 @@ describe('Part 1', () => {
 [1518-11-05 00:03] Guard #99 begins shift
 [1518-11-05 00:45] falls asleep
 [1518-11-05 00:55] wakes up`;
-    assert.strictEqual(partOne(input), 240);
+    partOne(input).should.equal(240);
   });
 });
 
@@ -44,6 +44,6 @@ describe('Part 2', () => {
 [1518-11-05 00:03] Guard #99 begins shift
 [1518-11-05 00:45] falls asleep
 [1518-11-05 00:55] wakes up`;
-    assert.strictEqual(partTwo(input), 4455);
+    partTwo(input).should.equal(4455);
   });
 });
