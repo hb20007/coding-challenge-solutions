@@ -6,7 +6,7 @@
       "type": "shell",
       "command": "mocha -t 15000 '${file}'",
       "group": {
-        "kind": "build",
+        "kind": "test",
         "isDefault": true
       },
       "problemMatcher": []
