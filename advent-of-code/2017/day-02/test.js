@@ -7,7 +7,7 @@ describe('Day 2: Corruption Checksum', () => {
     it('should calculate checksum as 18', () => {
       const SPREADSHEET = [[5, 1, 9, 5], [7, 5, 3], [2, 4, 6, 8]];
 
-      assert.equal(18, partOne(SPREADSHEET));
+      assert.strictEqual(18, partOne(SPREADSHEET));
     });
   });
 
@@ -15,7 +15,7 @@ describe('Day 2: Corruption Checksum', () => {
     it('should calculate second checksum as 9', () => {
       const SPREADSHEET = [[5, 9, 2, 8], [9, 4, 7, 3], [3, 8, 6, 5]];
 
-      assert.equal(9, partTwo(SPREADSHEET));
+      assert.strictEqual(9, partTwo(SPREADSHEET));
     });
   });
 });

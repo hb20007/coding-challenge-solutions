@@ -11,7 +11,7 @@ describe('Day 4: High-Entropy Passphrases', () => {
         ['aa', 'bb', 'cc', 'dd', 'aaa']
       ];
 
-      assert.equal(2, partOne(PASSPHRASES));
+      assert.strictEqual(2, partOne(PASSPHRASES));
     });
   });
 
@@ -25,7 +25,7 @@ describe('Day 4: High-Entropy Passphrases', () => {
         ['oiii', 'ioii', 'iioi', 'iiio']
       ];
 
-      assert.equal(3, partTwo(PASSPHRASES));
+      assert.strictEqual(3, partTwo(PASSPHRASES));
     });
   });
 });

@@ -1,11 +1,11 @@
 /* eslint array-callback-return: "off", consistent-return: "off" */
 const partTwo = (rows) => rows.reduce((checksum, row) => {
-  for (let i = 0; i < row.length; i++) {
-    const candidates = row.filter((x) => x < row[i]);
+  for (const number of row) {
+    const candidates = row.filter((x) => x < number);
 
-    for (let j = 0; j < candidates.length; j++) {
-      if (row[i] % candidates[j] === 0) {
-        return checksum + row[i] / candidates[j];
+    for (const candidate of candidates) {
+      if (number % candidate === 0) {
+        return checksum + number / candidate;
       }
     }
   }

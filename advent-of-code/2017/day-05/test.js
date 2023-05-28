@@ -7,13 +7,13 @@ describe('Day 5: A Maze of Twisty Trampolines, All Alike', () => {
 
   describe('Part 1', () => {
     it('should calculate 5 steps needed', () => {
-      assert.equal(5, partOne(OFFSETS));
+      assert.strictEqual(5, partOne(OFFSETS));
     });
   });
 
   describe('Part 2', () => {
     it('should calculate 10 steps needed', () => {
-      assert.equal(10, partTwo(OFFSETS));
+      assert.strictEqual(10, partTwo(OFFSETS));
     });
   });
 });

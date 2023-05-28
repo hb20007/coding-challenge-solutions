@@ -7,13 +7,13 @@ describe('Day 6: Memory Reallocation', () => {
 
   describe('Part 1', () => {
     it('should calculate 5 steps', () => {
-      assert.equal(partOne(BANKS), 5);
+      assert.strictEqual(partOne(BANKS), 5);
     });
   });
 
   describe('Part Two', () => {
     it('should calculate loop size 4', () => {
-      assert.equal(partTwo(BANKS), 4);
+      assert.strictEqual(partTwo(BANKS), 4);
     });
   });
 });
