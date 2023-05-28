@@ -3,7 +3,7 @@ import re
 
 
 def meets_criteria2(pwd: int) -> bool:
-	pwd = str(pwd)
+	pwd_as_str = str(pwd)
 
 	# We need to find a group of strictly 2 repeating digits. In the 2nd RE,
 	# we use negative lookahead and negative lookbehind to make sure that
@@ -11,8 +11,8 @@ def meets_criteria2(pwd: int) -> bool:
 	# The negative lookbehind with a fixed-length group reference (?<!\1..)
 	# was added in Python 3.5.
 	return bool(
-		re.fullmatch(r'1*2*3*4*5*6*7*8*9*', pwd)
-		and re.search(r'(.)\1(?<!\1..)(?!\1)', pwd)
+		re.fullmatch(r'1*2*3*4*5*6*7*8*9*', pwd_as_str)
+		and re.search(r'(.)\1(?<!\1..)(?!\1)', pwd_as_str)
 	)
 
 

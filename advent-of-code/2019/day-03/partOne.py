@@ -1,7 +1,8 @@
+import sys
 from typing import Tuple, List, Set
 
 
-def manhattan_dist_2D(coord: Tuple[int, int]) -> int:
+def manhattan_dist_2d(coord: Tuple[int, int]) -> int:
 	return abs(coord[0]) + abs(coord[1])
 
 
@@ -39,4 +40,4 @@ def distance_to_closest_intersection(
 
 	crossings = wire_1_positions.intersection(wire_2_positions)
 
-	return min(manhattan_dist_2D(pos) for pos in crossings)
+	return min(manhattan_dist_2d(pos) for pos in crossings)

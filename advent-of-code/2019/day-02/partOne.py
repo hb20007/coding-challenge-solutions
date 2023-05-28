@@ -1,3 +1,4 @@
+import sys
 from typing import List, Optional
 
 
@@ -7,7 +8,7 @@ def parse_intcodes(
 	val1: Optional[int] = None,
 	pos2: Optional[int] = None,
 	val2: Optional[int] = None
-) -> int:
+) -> Optional[int]:
 	ints = intcodes[:]
 
 	if pos1 is not None and val1 is not None:

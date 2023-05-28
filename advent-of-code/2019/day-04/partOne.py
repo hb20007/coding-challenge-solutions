@@ -1,7 +1,10 @@
 def meets_criteria(pwd: int) -> bool:
-	pwd = str(pwd)
-	pwd_as_list = list(pwd)
-	return pwd_as_list == sorted(pwd_as_list) and not len(pwd) == len(set(pwd))
+	pwd_as_str = str(pwd)
+	pwd_as_list = list(pwd_as_str)
+	return (
+		pwd_as_list == sorted(pwd_as_list)
+		and len(pwd_as_str) != len(set(pwd_as_str))
+	)
 
 
 def count_possible_pwds(start: int, end: int) -> int:

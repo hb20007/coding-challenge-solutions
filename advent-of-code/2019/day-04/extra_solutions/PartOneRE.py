@@ -3,9 +3,12 @@ import re
 
 
 def meets_criteria(pwd: int) -> bool:
-	pwd = str(pwd)
+	pwd_as_str = str(pwd)
 	return bool(
-		re.fullmatch(r'1*2*3*4*5*6*7*8*9*', pwd) and re.search(r'(.)\1', pwd)
+		(
+			re.fullmatch(r'1*2*3*4*5*6*7*8*9*', pwd_as_str)
+			and re.search(r'(.)\1', pwd_as_str)
+		)
 	)
 
 

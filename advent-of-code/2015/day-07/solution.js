@@ -24,7 +24,7 @@ const parseInstruction = (instruction) => {
   const destination = args.pop();
 
   return {
-    command: command && command[0],
+    command: command?.[0],
     args: args.map((arg) => (Number.isNaN(Number(arg)) ? arg : Number(arg))),
     destination
   };

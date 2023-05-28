@@ -2,8 +2,8 @@ const fs = require('fs');
 
 function extractInfo(room) {
   // eslint-disable-next-line no-unused-vars
-  const [_, name, sectorId, sum] = room.match(
-    /([a-z-]+)([0-9]+)\[([a-z]{5})\]/
+  const [_, name, sectorId, sum] = room.match( // NOSONAR
+    /([a-z-]+)(\d+)\[([a-z]{5})\]/
   );
   return { name, sectorId, sum };
 }

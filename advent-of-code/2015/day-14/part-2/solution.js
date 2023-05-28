@@ -22,7 +22,10 @@ function* getReindeerDistanceIterator(input) {
 
   for (let currentTime = 0; currentTime <= TIME; currentTime++) {
     const isMoving = (currentTime % (time + rest) <= time) && (currentTime % (time + rest) !== 0);
-    yield isMoving ? currentDistance += speed : currentDistance; // http://qnimate.com/javascript-yield-keyword-and-function-syntax/
+    if (isMoving) {
+      currentDistance += speed;
+    }
+    yield currentDistance; // http://qnimate.com/javascript-yield-keyword-and-function-syntax/
   }
 }
 
@@ -51,6 +54,6 @@ for (let currentTime = 0; currentTime <= TIME; currentTime++) {
 }
 
 // Calculate the winner and points
-const result = Math.max.apply(_, Array.from(reindeerPoints.values())); // eslint-disable-line no-undef
+const result = Math.max.apply(Math, Array.from(reindeerPoints.values()));
 
 console.log(result);

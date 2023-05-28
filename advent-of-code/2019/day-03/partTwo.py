@@ -1,3 +1,4 @@
+import sys
 from typing import List, Set, Tuple, Dict
 from partOne import get_all_wire_path_positions
 

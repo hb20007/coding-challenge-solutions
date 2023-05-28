@@ -10,7 +10,7 @@ const hasStraightIncreasingSymbols = (string) =>
         arr[index] === arr[index + 1] - 1
         && arr[index + 1] === arr[index + 2] - 1
     );
-const hasRestrictedSymbols = (string) => /i|o|l/.test(string);
+const hasRestrictedSymbols = (string) => /[iol]/.test(string);
 const hasPairs = (string) => /(\w)\1.*(\w)\2/.test(string);
 
 // Increments one char

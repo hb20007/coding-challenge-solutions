@@ -1,11 +1,11 @@
 from typing import List
 
 
-def is_increasing(pwd: List[int]):
+def is_increasing(pwd: List[str]):
 	return pwd == sorted(pwd)
 
 
-def has_double(pwd: List[int]):
+def has_double(pwd: List[str]):
 	end = len(pwd) - 1
 
 	for i in range(end):
