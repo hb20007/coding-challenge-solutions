@@ -6,7 +6,7 @@ import statistics
 
 
 class Solution:
-    def findMedianSortedArrays(self, nums1, nums2):
+    def find_median_sorted_arrays(self, nums1, nums2):
         """
         :type nums1: List[int]
         :type nums2: List[int]

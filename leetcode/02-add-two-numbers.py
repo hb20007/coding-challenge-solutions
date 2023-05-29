@@ -20,7 +20,7 @@ Explanation: 342 + 465 = 807.
 
 
 class Solution:
-    def addTwoNumbers(self, l1, l2):
+    def add_two_numbers(self, l1, l2):
         """
         :type l1: ListNode
         :type l2: ListNode

@@ -18,22 +18,22 @@ class Solution:
             myset.add(string[i])
         return True
 
-    def lengthOfLongestSubstring(self, s):
+    def length_of_longest_substring(self, s):
         """
         :type s: str
         :rtype: int
         """
         # SOLUTION 1: FIRST ATTEMPT
         longest = 0
-        buffer = ""    # buffer = set() # (Same performance)
-        for c1 in s:
-            for c2 in s:
-                if c2 not in buffer:
-                    buffer += c2    # buffer.add(c2) # if using a set
-                    if len(buffer) > longest:
-                        longest = len(buffer)
+        buffer_str = ""    # buffer = set() # (Same performance)
+        for _ in s:
+            for c in s:
+                if c not in buffer_str:
+                    buffer_str += c    # buffer.add(c) # if using a set
+                    if len(buffer_str) > longest:
+                        longest = len(buffer_str)
                 else:
-                    buffer = ""     # buffer = set() # if using a set
+                    buffer_str = ""     # buffer = set() # if using a set
                     s = s[1:]
                     break
         return longest

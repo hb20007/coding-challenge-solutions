@@ -7,7 +7,7 @@ Reversed integers might overflow.
 
 
 class Solution:
-    def isPalindrome(self, x):
+    def is_palindrome(self, x):
         """
         :type x: int
         :rtype: bool
@@ -18,7 +18,7 @@ class Solution:
             return False    # Negative numbers are not palindromes. Also numbers that end with 0 which are not 0.
 
         reversed_x = 0
-        while x > reverted_x:
+        while x > reversed_x:
             reversed_x = reversed_x * 10 + x % 10
             x //= 10
 

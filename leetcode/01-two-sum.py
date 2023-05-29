@@ -6,7 +6,7 @@ You may assume that each input would have exactly one solution, and you may not 
 
 
 class Solution:
-    def twoSum(self, nums, target):  # Usually Python vars and functions use lower_case as opposed to mixedCase though. The first argument of every class method, including init, is always a reference to the current instance of the class. By convention, this argument is always named self. When a method definition is decorated, we don't know whether to automatically give it a 'self' parameter or not, which is why this is necessary. Also all Python updates should be backward-compatible.
+    def two_sum(self, nums, target):  # Usually Python vars and functions use lower_case as opposed to mixedCase though. The first argument of every class method, including init, is always a reference to the current instance of the class. By convention, this argument is always named self. When a method definition is decorated, we don't know whether to automatically give it a 'self' parameter or not, which is why this is necessary. Also all Python updates should be backward-compatible.
         """
         :type nums: List[int]
         :type target: int

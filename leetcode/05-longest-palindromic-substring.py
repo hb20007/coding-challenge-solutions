@@ -32,7 +32,7 @@ class Solution:
             right += 1
         return right - left - 1
 
-    def longestPalindrome(self, s):
+    def longest_palindrome(self, s):
         """
         :type s: str
         :rtype: str

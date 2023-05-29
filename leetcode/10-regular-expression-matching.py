@@ -2,16 +2,16 @@
 Implement regular expression matching with support for '.' and '*'.
 The matching should cover the entire input string (not partial).
 Some examples:
-isMatch("aa","a") → false
-isMatch("aa","aa") → true
-isMatch("aa", "a*") → true
-isMatch("ab", ".*") → true
-isMatch("aab", "c*a*b") → true
+is_match("aa","a") → false
+is_match("aa","aa") → true
+is_match("aa", "a*") → true
+is_match("ab", ".*") → true
+is_match("aab", "c*a*b") → true
 """
 
 
 class Solution:
-    def isMatch(self, text, pattern):
+    def is_match(self, text, pattern):
         """
         :type text: str
         :type pattern: str
@@ -27,11 +27,11 @@ class Solution:
 
         if len(pattern) >= 2 and pattern[1] == '*':     # The Kleene star is dealt with separately
             return (
-                (self.isMatch(text, pattern[2:])     # This usually runs until both text and pattern[2:] are empty. This line represents the case when there are 0 occurences of the character with the *.
-                    or first_match and self.isMatch(text[1:], pattern))    # The key is that in this line the second argument is pattern itself. This allows us to match the same character in pattern multiple times as long as the one after it is a star. Note the lack of need of having parenthesis in our statement involving 'or' and 'and'.
+                (self.is_match(text, pattern[2:])     # This usually runs until both text and pattern[2:] are empty. This line represents the case when there are 0 occurences of the character with the *.
+                    or first_match and self.is_match(text[1:], pattern))    # The key is that in this line the second argument is pattern itself. This allows us to match the same character in pattern multiple times as long as the one after it is a star. Note the lack of need of having parenthesis in our statement involving 'or' and 'and'.
             )
         else:
-            return first_match and self.isMatch(text[1:], pattern[1:])  # The problem is really easy if no * is involved.
+            return first_match and self.is_match(text[1:], pattern[1:])  # The problem is really easy if no * is involved.
 
         # SOLUTION 2: DYNAMIC PROGRAMMING (DP), TOP-DOWN APPROACH
         memo = {}   # Will be used to cache intermediate results.
