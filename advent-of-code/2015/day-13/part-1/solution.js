@@ -49,8 +49,8 @@ const allPossiblePermutations = permuteArr(getAttendees(INPUT));
 const totalHappiness = allPossiblePermutations.reduce(
   (totalHappinessAcc, permutation) => {
     const finalTotal = permutation.reduce((total, person, index, arr) => {
-      const leftOne = arr[index - 1 < 0 ? arr.length - 1 : index - 1];
-      const rightOne = arr[index + 1 > arr.length - 1 ? 0 : index + 1];
+      const leftOne = arr.at(index - 1 < 0 ? -1 : index - 1);
+      const rightOne = arr.at(index + 1 > arr.length - 1 ? 0 : index + 1);
 
       total += personAttributes.get(`${person} -> ${leftOne}`);
       total += personAttributes.get(`${person} -> ${rightOne}`);
