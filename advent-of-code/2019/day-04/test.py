@@ -1,6 +1,6 @@
 import unittest
-from partOne import meets_criteria
-from partTwo import meets_criteria2
+from part_one import meets_criteria
+from part_two import meets_criteria2
 
 
 class TestDay4(unittest.TestCase):

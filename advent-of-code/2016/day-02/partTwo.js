@@ -19,7 +19,7 @@ const pos = { x: 0, y: 2 };
 let code = '';
 
 instructions.forEach((line) => {
-  line.forEach((instruction) => {
+  line.forEach((instruction) => { // NOSONAR
     switch (instruction) {
       case 'U':
         if (pos.y > 0 && DIALS[pos.y - 1][pos.x]) {

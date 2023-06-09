@@ -32,7 +32,7 @@ instructions.forEach((line) => {
     }
   });
 
-  code += DIALS[pos.y][pos.x];
+  code += String(DIALS[pos.y][pos.x]);
 });
 
 console.log(code);

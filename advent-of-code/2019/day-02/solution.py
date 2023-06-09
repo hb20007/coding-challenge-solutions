@@ -1,5 +1,5 @@
-from partOne import parse_intcodes
-from partTwo import find_noun_and_verb
+from part_one import parse_intcodes
+from part_two import find_noun_and_verb
 
 
 with open('input.txt') as f:

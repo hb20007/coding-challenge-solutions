@@ -1,4 +1,4 @@
-const partOne = (input) => {
+const partOne = (input) => { // NOSONAR
   input = input.split('\n').map((line) => line.split(', ').map(Number));
 
   const xCoords = input.map(([x]) => x); // Array destructuring

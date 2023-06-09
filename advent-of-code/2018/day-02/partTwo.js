@@ -9,7 +9,7 @@ const partTwo = (input) => {
     for (let j = i + 1; j < noOfIds; j++) {
       const identicalLetters = [];
       for (let k = 0; k < idLength; k++) {
-        if (input[i][k] === input[j][k]) {
+        if (input[i][k] === input[j][k]) { // NOSONAR
           identicalLetters.push(input[i][k]);
         }
       }

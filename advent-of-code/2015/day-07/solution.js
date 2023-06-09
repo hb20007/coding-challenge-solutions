@@ -10,11 +10,11 @@ const WIRES = new Map();
 
 // Dictionary of bitwise methods
 const BITWISE_METHODS = {
-  AND: (a, b) => a & b,
-  OR: (a, b) => a | b,
-  NOT: (a) => ~a,
-  LSHIFT: (a, b) => a << b,
-  RSHIFT: (a, b) => a >> b
+  AND: (a, b) => a & b, // NOSONAR
+  OR: (a, b) => a | b, // NOSONAR
+  NOT: (a) => ~a, // NOSONAR
+  LSHIFT: (a, b) => a << b, // NOSONAR
+  RSHIFT: (a, b) => a >> b // NOSONAR
 };
 
 // Parse instruction and return object with command, arguments and destination wire

@@ -1,11 +1,8 @@
-from typing import List
-
-
-def is_increasing(pwd: List[str]):
+def is_increasing(pwd: list[str]):
 	return pwd == sorted(pwd)
 
 
-def has_double(pwd: List[str]):
+def has_double(pwd: list[str]):
 	end = len(pwd) - 1
 
 	for i in range(end):

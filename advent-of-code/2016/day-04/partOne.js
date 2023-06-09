@@ -27,7 +27,7 @@ function sortByKey(item1, item2) {
     result = 1;
   } else if (count1 < count2) {
     result = -1;
-  } else if (count1 === count2) {
+  } else { // count1 === count2
     if (name1 < name2) {
       result = 1;
     } else if (name1 > name2) {

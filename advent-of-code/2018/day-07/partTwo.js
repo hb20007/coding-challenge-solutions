@@ -1,4 +1,4 @@
-const partTwo = (input) => {
+const partTwo = (input) => { // NOSONAR
   input = input.split('\n').map((line) => [line[5], line[36]]);
   const allSteps = [...new Set(input.flat())].sort();
 

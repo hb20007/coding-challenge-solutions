@@ -26,10 +26,9 @@ class Solution:
         first_match = bool(text) and pattern[0] in {text[0], '.'}   # text is not empty and the first char matches
 
         if len(pattern) >= 2 and pattern[1] == '*':     # The Kleene star is dealt with separately
-            return (
-                (self.is_match(text, pattern[2:])     # This usually runs until both text and pattern[2:] are empty. This line represents the case when there are 0 occurences of the character with the *.
+            return (self.is_match(text, pattern[2:])     # This usually runs until both text and pattern[2:] are empty. This line represents the case when there are 0 occurences of the character with the *.
                     or first_match and self.is_match(text[1:], pattern))    # The key is that in this line the second argument is pattern itself. This allows us to match the same character in pattern multiple times as long as the one after it is a star. Note the lack of need of having parenthesis in our statement involving 'or' and 'and'.
-            )
+
         else:
             return first_match and self.is_match(text[1:], pattern[1:])  # The problem is really easy if no * is involved.
 

@@ -35,7 +35,7 @@ function isTriangle(triangle) {
 }
 
 const validTriangles = triangles.reduce(
-  (trianglesCount, current) => trianglesCount + isTriangle(current),
+  (trianglesCount, current) => trianglesCount + Number(isTriangle(current)),
   0
 );
 

@@ -34,6 +34,8 @@ INPUT.forEach((str) => {
         lights[i] = 0;
       } else if (commandObj.command === 'toggle') {
         lights[i] = lights[i] === 0 ? 1 : 0;
+      } else {
+        console.warn('Incorrect input.');
       }
     }
   }

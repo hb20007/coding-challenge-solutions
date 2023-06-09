@@ -1,5 +1,5 @@
-from partOne import calc_fuel
-from partTwo import calc_fuel_loop
+from part_one import calc_fuel
+from part_two import calc_fuel_loop
 
 
 with open('input.txt') as f:

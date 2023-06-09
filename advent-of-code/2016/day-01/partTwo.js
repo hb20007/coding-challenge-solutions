@@ -36,35 +36,35 @@ const { visits } = instructions.reduce(
 
     switch (state.pointing) {
       case 'N': {
-        const newV_N = state.v + instruction.blocks;
-        for (let i = state.v + 1; i <= newV_N; i++) {
+        const newVNorth = state.v + instruction.blocks;
+        for (let i = state.v + 1; i <= newVNorth; i++) {
           state.visits.push(`${state.h},${i}`);
         }
-        state.v = newV_N;
+        state.v = newVNorth;
         break;
       }
       case 'S': {
-        const newV_S = state.v - instruction.blocks;
-        for (let i = state.v - 1; i >= newV_S; i--) {
+        const newVSouth = state.v - instruction.blocks;
+        for (let i = state.v - 1; i >= newVSouth; i--) {
           state.visits.push(`${state.h},${i}`);
         }
-        state.v = newV_S;
+        state.v = newVSouth;
         break;
       }
       case 'E': {
-        const newH_E = state.h + instruction.blocks;
-        for (let i = state.h + 1; i <= newH_E; i++) {
+        const newHEast = state.h + instruction.blocks;
+        for (let i = state.h + 1; i <= newHEast; i++) {
           state.visits.push(`${i},${state.v}`);
         }
-        state.h = newH_E;
+        state.h = newHEast;
         break;
       }
       case 'W': {
-        const newH_W = state.h - instruction.blocks;
-        for (let i = state.h - 1; i >= newH_W; i--) {
+        const newHWest = state.h - instruction.blocks;
+        for (let i = state.h - 1; i >= newHWest; i--) {
           state.visits.push(`${i},${state.v}`);
         }
-        state.h = newH_W;
+        state.h = newHWest;
         break;
       }
       default:

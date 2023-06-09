@@ -1,4 +1,4 @@
-const partTwo = (input) => {
+const partTwo = (input) => { // NOSONAR
   input = input
     .split('\n')
     .map((event) => event.trim())
@@ -26,7 +26,7 @@ const partTwo = (input) => {
       if (!sleepMinutes[currentGuardId]) {
         sleepMinutes[currentGuardId] = {};
 
-        for (let key = 0; key < 60; key++) {
+        for (let key = 0; key < 60; key++) { // NOSONAR
           sleepMinutes[currentGuardId][key] = 0;
         }
       }
