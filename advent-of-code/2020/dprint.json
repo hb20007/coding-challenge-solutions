@@ -1,0 +1,14 @@
+{
+  "incremental": true,
+  "lineWidth": 80,
+  "prettier": {
+    "singleQuote": true,
+    "endOfLine": "auto",
+    "trailingComma": "all"
+  },
+  "includes": ["**/*.{ts,tsx,js,jsx,json,md}"],
+  "excludes": ["**/node_modules", "**/*-lock.json"],
+  "plugins": [
+    "https://plugins.dprint.dev/prettier-0.24.0.json@9a57d0d8e440ad90d07a503166af47e7a6a886abd46767933f9c279f72468596"
+  ]
+}

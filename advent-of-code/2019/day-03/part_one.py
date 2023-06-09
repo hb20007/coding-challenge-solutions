@@ -1,12 +1,11 @@
 import sys
-from typing import Tuple, List, Set
 
 
-def manhattan_dist_2d(coord: Tuple[int, int]) -> int:
+def manhattan_dist_2d(coord: tuple[int, int]) -> int:
 	return abs(coord[0]) + abs(coord[1])
 
 
-def get_all_wire_path_positions(wire_path: List[str]) -> Set[Tuple[int, int]]:
+def get_all_wire_path_positions(wire_path: list[str]) -> set[tuple[int, int]]:
 	x, y = 0, 0
 	positions = set()
 
@@ -32,8 +31,8 @@ def get_all_wire_path_positions(wire_path: List[str]) -> Set[Tuple[int, int]]:
 
 
 def distance_to_closest_intersection(
-	wire_1_path: List[str],
-	wire_2_path: List[str]
+	wire_1_path: list[str],
+	wire_2_path: list[str]
 ) -> int:
 	wire_1_positions = get_all_wire_path_positions(wire_1_path)
 	wire_2_positions = get_all_wire_path_positions(wire_2_path)

@@ -45,7 +45,7 @@ class Solution:
 
         l3 = ListNode(n3 % 10)
         l3_current = l3
-        while (n3 >= 10):   # Converting answer to linked list
+        while n3 >= 10:   # Converting answer to linked list
             n3 //= 10
             l3_current.next = ListNode(n3 % 10)    # NB: a solution with l3_current = ListNode(n3 % 10) wouldn't work because we would be overwriting l3_current. We need to work with l3_current.next.
             l3_current = l3_current.next

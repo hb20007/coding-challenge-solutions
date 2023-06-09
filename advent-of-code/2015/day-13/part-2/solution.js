@@ -25,7 +25,7 @@ const permuteArr = (input) => {
 const getPersonAttributes = (input) =>
   input.reduce((map, person) => {
     const parsed = person.match(PERSON_ATTRIBUTES_REGEX);
-    const name = parsed[1];
+    const name = parsed[1]; // NOSONAR
     const isLose = parsed[2] === 'lose';
     const count = +parsed[3];
     const neighbour = parsed[4];

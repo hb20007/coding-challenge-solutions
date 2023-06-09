@@ -1,12 +1,11 @@
 import sys
-from typing import List, Set, Tuple, Dict
-from partOne import get_all_wire_path_positions
+from part_one import get_all_wire_path_positions
 
 
 def get_steps_for_crossings(
-	wire_path: List[str],
-	crossings: Set[Tuple[int, int]]
-) -> Dict[Tuple[int, int], int]:
+	wire_path: list[str],
+	crossings: set[tuple[int, int]]
+) -> dict[tuple[int, int], int]:
 	crossing_dict = {}
 	distance = 0
 	x, y = 0, 0
@@ -35,8 +34,8 @@ def get_steps_for_crossings(
 
 
 def steps_to_best_intersection(
-	wire_1_path: List[str],
-	wire_2_path: List[str]
+	wire_1_path: list[str],
+	wire_2_path: list[str]
 ) -> int:
 	wire_1_positions = get_all_wire_path_positions(wire_1_path)
 	wire_2_positions = get_all_wire_path_positions(wire_2_path)

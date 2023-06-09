@@ -7,9 +7,7 @@ const TIME = 2503;
 
 const getReindeerDistance = (input) => {
   const args = input.match(REINDEER_REGEX).map(Number);
-  const speed = args[0];
-  const time = args[1];
-  const rest = args[2];
+  const [speed, time, rest] = args;
 
   return Math.ceil(TIME / (time + rest)) * (speed * time); // Number of cycles * distance travelled at each cycle
 };

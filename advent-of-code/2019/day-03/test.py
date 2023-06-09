@@ -1,6 +1,6 @@
 import unittest
-from partOne import distance_to_closest_intersection
-from partTwo import steps_to_best_intersection
+from part_one import distance_to_closest_intersection
+from part_two import steps_to_best_intersection
 
 
 class TestDay3(unittest.TestCase):

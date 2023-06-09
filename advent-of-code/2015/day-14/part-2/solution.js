@@ -14,9 +14,7 @@ const getReindeerName = (input) => input.match(REINDEER_NAME_REGEX)[0];
 // Calculates distance for one of the reindeer from 0 to 2503 seconds
 function* getReindeerDistanceIterator(input) {
   const args = input.match(REINDEER_ARGS_REGEX).map(Number);
-  const speed = args[0];
-  const time = args[1];
-  const rest = args[2];
+  const [speed, time, rest] = args;
 
   let currentDistance = 0;
 

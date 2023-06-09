@@ -44,7 +44,7 @@ class Solution:
 
         going_down = True
         row_idx = 0
-        zig_zag_rows_array = ["" for x in range(num_rows)]   # This is considered bad Python practice because it creates an array of a fixed size. However, we are writing code for a very specific problem so it's justifiable for simplicity.
+        zig_zag_rows_array = ["" for _ in range(num_rows)]   # This is considered bad Python practice because it creates an array of a fixed size. However, we are writing code for a very specific problem so it's justifiable for simplicity.
         ans = ""
 
         for string_idx, char_at_current_idx in enumerate(s):    # NB here we are looping through the string directly while in the previous approach we were looping through numRows.
