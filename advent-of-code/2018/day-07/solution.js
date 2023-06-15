@@ -1,9 +1,10 @@
 const { readFileSync } = require('fs');
-const log = require('node-pretty-log');
+const Logger = require('@ptkdev/logger');
 const partOne = require('./partOne');
 const partTwo = require('./partTwo');
 
 const INPUT = readFileSync(`${__dirname}/input.txt`, 'utf8');
+const logger = new Logger();
 
-log('success', 'PART 1 |', partOne(INPUT));
-log('success', 'PART 2 |', partTwo(INPUT));
+logger.info(partOne(INPUT), 'PART 1');
+logger.info(partTwo(INPUT), 'PART 2');
