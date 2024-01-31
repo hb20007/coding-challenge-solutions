@@ -12,6 +12,6 @@
   },
   "dependencies": {
     "@ptkdev/logger": "^1.8.0",
-    "chai": "^4.3.10"
+    "chai": "^4.4.0"
   }
 }
