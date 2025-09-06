@@ -12,7 +12,7 @@ for (const [i, c] of INPUT.split('').entries()) {
   }
 }
 
-// ALTERNATIVE SOLUTION: MORE ELEGANT BUT MUST GO THROUGH WHOLE ARRAY
+// ALTERNATIVE SOLUTION: MORE ELEGANT BUT MUST GO THROUGH THE WHOLE ARRAY
 // let floor = 0;
 // let result = INPUT.split('').map(
 //     direction => direction === '(' ? ++floor : --floor

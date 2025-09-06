@@ -65,7 +65,7 @@ const partOne = (input) => { // NOSONAR
   let sleepiestMinute = -1;
   let maxSleepCount = -1;
   for (const key in sleepMinutes[laziestGuardId]) {
-    if (Object.prototype.hasOwnProperty.call(sleepMinutes[laziestGuardId], key)) {
+    if (Object.hasOwn(sleepMinutes[laziestGuardId], key)) {
       const currentSleepCount = sleepMinutes[laziestGuardId][key];
       if (currentSleepCount > maxSleepCount) {
         maxSleepCount = currentSleepCount;

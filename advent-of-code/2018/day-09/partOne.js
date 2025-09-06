@@ -9,7 +9,6 @@ const partOne = (input) => {
   for (let value = 1; value <= marbles; value++) {
     if (value % 23) {
       current = ((current + 1) % circleLength) + 1;
-      // Array.prototype.copyWithin(): https://www.geeksforgeeks.org/javascript-array-copywithin/
       circle.copyWithin(current + 1, current, circleLength);
       circle[current] = value;
       circleLength++;

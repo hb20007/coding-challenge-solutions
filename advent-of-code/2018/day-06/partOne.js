@@ -12,7 +12,7 @@ const partOne = (input) => { // NOSONAR
 
   const infiniteAreaPoints = new Set();
 
-  // Get the nearest point(s) of a given pair of coordinates
+  // Get the nearest point(s) of a given pair of coordinates:
   function getNearestPoints(x, y) {
     const distances = input.map(
       (point) => Math.abs(point[0] - x) + Math.abs(point[1] - y)

@@ -4,7 +4,7 @@ const INPUT = fs.readFileSync(`${__dirname}/input.txt`, 'utf-8').split('\n');
 
 const DIRECTION_REGEX = /(\w+) to (\w+) = (\d+)/;
 
-// Takes input and builds set of all places that need to be visited
+// Takes the input and builds a set of all places that need to be visited:
 const buildPlacesSet = (input) => {
   const places = new Set();
 
@@ -16,7 +16,7 @@ const buildPlacesSet = (input) => {
   return places;
 };
 
-// Takes input and builds map of all possible routes between 2 points
+// Takes the input and builds a map of all possible routes between two points:
 const buildDistanceMap = (input) => {
   const map = new Map();
 
@@ -29,11 +29,10 @@ const buildDistanceMap = (input) => {
   return map;
 };
 
-// Takes set of items and builds array with all possible permutations between them
+// Takes a set of items and builds an array with all possible permutations between them:
 const permuteSet = (set) => {
   const array = Array.from(set);
 
-  // This is a reducer function. It doesn't matter than it has the same name as its parent function due to scoping. Third argument: current index, 4th argument: source array.
   const permute = (res, item, key, arr) =>
     res.concat(
       (arr.length > 1
@@ -64,7 +63,7 @@ const allPossibleDistances = allPossibleRoutes.reduce((acc, route) => {
   return acc.concat([total]);
 }, []);
 
-// For part 2, just change min below to max.
+// For part 2, just change "min" below to "max".
 const result = Math.min.apply(null, allPossibleDistances);
 
 console.log(result);

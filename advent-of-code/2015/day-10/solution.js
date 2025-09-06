@@ -1,6 +1,6 @@
 const INPUT = '1321131112';
 
-const FIND_REPETITIONS_REGEX = /(\d)\1*/g; // \1 = capturing group 1
+const FIND_REPETITIONS_REGEX = /(\d)\1*/g;
 
 const PART_1_REPS = 40;
 const PART_2_REPS = 50; // eslint-disable-line no-unused-vars

@@ -17,10 +17,10 @@ const BITWISE_METHODS = {
   RSHIFT: (a, b) => a >> b // NOSONAR
 };
 
-// Parse instruction and return object with command, arguments and destination wire
+// Parses an instruction and return an object with the command, arguments and destination wire:
 const parseInstruction = (instruction) => {
-  const command = instruction.match(COMMAND_REGEX); // e.g. ['OR'], can also be null
-  const args = instruction.match(ARGUMENTS_REGEX); // e.g. ['eh'], or ['hg, '3']
+  const command = instruction.match(COMMAND_REGEX); // e.g., ['OR']; can also be null
+  const args = instruction.match(ARGUMENTS_REGEX); // e.g., ['eh'], or ['hg, '3']
   const destination = args.pop();
 
   return {
@@ -30,7 +30,7 @@ const parseInstruction = (instruction) => {
   };
 };
 
-// Calculate value for a wire recursively
+// Calculates the value for a wire recursively:
 const calculateWire = (wireName) => {
   const wire = WIRES.get(wireName);
 

@@ -16,7 +16,7 @@ function isTriangle(data) {
 }
 
 const validTriangles = vertices.reduce(
-  (trianglesCount, current) => trianglesCount + isTriangle(current),
+  (trianglesCount, current) => trianglesCount + +isTriangle(current),
   0
 );
 

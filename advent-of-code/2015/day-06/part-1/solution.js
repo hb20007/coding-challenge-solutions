@@ -16,7 +16,7 @@ const parseCommand = (string) => {
     y1: +command[3],
     x2: +command[4],
     y2: +command[5]
-  }; // command[0] is the string itself.
+  };
 };
 
 const lights = new Uint8Array(GRID_LENGTH * GRID_LENGTH); // Contents initialized to 0.

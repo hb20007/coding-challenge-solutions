@@ -4,7 +4,7 @@ const INPUT = fs.readFileSync(`${__dirname}/input.txt`, 'utf-8').split('\n');
 
 const PERSON_ATTRIBUTES_REGEX = /(\w+) would (\w+) (\d+) happiness units by sitting next to (\w+)./;
 
-// Generate all possible permutations for an array
+// Generate all possible permutations for an array:
 const permuteArr = (input) => {
   const array = Array.from(input);
   const permute = (res, item, key, arr) =>
@@ -21,29 +21,29 @@ const permuteArr = (input) => {
   return array.reduce(permute, []);
 };
 
-// Parse input and return map with attributes of each person
+// Parse input and return map with attributes of each person:
 const getPersonAttributes = (input) =>
   input.reduce((map, person) => {
     const parsed = person.match(PERSON_ATTRIBUTES_REGEX);
     const name = parsed[1]; // NOSONAR
     const isLose = parsed[2] === 'lose';
     const count = +parsed[3];
-    const neighbour = parsed[4];
+    const neighbor = parsed[4];
 
-    return map.set(`${name} -> ${neighbour}`, isLose ? -count : count);
+    return map.set(`${name} -> ${neighbor}`, isLose ? -count : count);
   }, new Map());
 
-// Get attendees list
+// Get attendees list:
 const getAttendees = (input) =>
   input.reduce((set, person) => {
     const parsed = person.match(PERSON_ATTRIBUTES_REGEX);
     return set.add(parsed[1]);
   }, new Set());
 
-// Get all persons' attributes
+// Get all persons' attributes:
 const personAttributes = getPersonAttributes(INPUT);
 
-// Get all possible permutations of the guests
+// Get all possible permutations of the guests:
 const allPossiblePermutations = permuteArr(getAttendees(INPUT));
 
 const totalHappiness = allPossiblePermutations.reduce(

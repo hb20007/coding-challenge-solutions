@@ -6,8 +6,8 @@ const INPUT = fs
   .split('\n');
 
 const result = INPUT.reduce((totalLength, element) => {
-  const sides = element.split('x').map(Number); // Number is a function, we map to Number in order to use '!==' to compare with an int.
-  const maxSideIndex = sides.indexOf(Math.max(...sides)); // We use the index because 2 sides can be the max side but we want to remove only 1.
+  const sides = element.split('x').map(Number); // We map using Number() in order to use '!==' to compare with an int.
+  const maxSideIndex = sides.indexOf(Math.max(...sides)); // We use the index because two sides can be the max side, but we want to remove only one.
   return (
     totalLength
     + sides.reduce(Math.imul)

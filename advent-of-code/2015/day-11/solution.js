@@ -1,6 +1,6 @@
 const INPUT = 'hxbxwxba';
 
-// Rules for correct password
+// Rules for correct password:
 const hasStraightIncreasingSymbols = (string) =>
   string
     .split('')
@@ -13,11 +13,9 @@ const hasStraightIncreasingSymbols = (string) =>
 const hasRestrictedSymbols = (string) => /[iol]/.test(string);
 const hasPairs = (string) => /(\w)\1.*(\w)\2/.test(string);
 
-// Increments one char
 const incrementChar = (char) =>
   char === 'z' ? 'a' : String.fromCharCode(char.charCodeAt(0) + 1);
 
-// Increments the whole string by one char recursively
 const incrementString = (string) => {
   const nextChar = incrementChar(string.slice(-1));
   return nextChar === 'a'
@@ -25,7 +23,6 @@ const incrementString = (string) => {
     : `${string.slice(0, -1)}${nextChar}`;
 };
 
-// Checks if password is valid
 const isValidPassword = (string) =>
   hasStraightIncreasingSymbols(string)
   && !hasRestrictedSymbols(string)

@@ -8,7 +8,7 @@ My solutions to programming problems and puzzles
 
 [Advent Of Code](advent-of-code/)
 
-## Let's Connect
+## Let’s Connect
 
 H. Z. Sababa — hb20007 — hzsababa@outlook.com
 

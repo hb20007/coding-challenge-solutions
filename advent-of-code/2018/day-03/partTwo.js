@@ -25,7 +25,7 @@ const partTwo = (input) => {
   });
 
   // We loop through all claims and find the one where
-  // none of its coords has a frequency > 1 in the coord map:
+  // none of its coords have a frequency > 1 in the coord map:
 
   let correctClaimId = -1;
 
@@ -38,8 +38,8 @@ const partTwo = (input) => {
         }
       }
     }
-    // We will reach this code only for the claim which does not overlap with any other.
-    correctClaimId = claimIndex + 1; // The ids are 1-based.
+    // We will reach this code only for the claim that does not overlap with any other.
+    correctClaimId = claimIndex + 1; // The ids are one-based.
   });
 
   return correctClaimId;

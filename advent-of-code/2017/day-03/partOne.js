@@ -2,7 +2,7 @@
 const partOne = (num) => {
   if (num === 1) return 0;
 
-  // Find the largest odd square smaller than input:
+  // Find the largest odd square smaller than the input:
   let oddSqBase;
   for (oddSqBase = 1; (oddSqBase + 2) * (oddSqBase + 2) < num; oddSqBase += 2);
 

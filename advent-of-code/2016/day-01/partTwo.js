@@ -29,7 +29,7 @@ const DIRECTIONS = {
   }
 };
 
-// Using destructuring assigment:
+// Using destructuring assignment:
 const { visits } = instructions.reduce(
   (state, instruction) => {
     state.pointing = DIRECTIONS[state.pointing][instruction.direction];

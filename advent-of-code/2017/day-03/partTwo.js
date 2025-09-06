@@ -1,6 +1,6 @@
 const request = require('sync-request');
 
-// Sequence A141481 in oeis
+// Sequence A141481 in the OEIS
 const partTwo = (num) => {
   const response = request('GET', 'https://oeis.org/A141481/b141481.txt');
   const sequenceInverted = response.body
