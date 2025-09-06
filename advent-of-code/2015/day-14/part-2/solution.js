@@ -19,7 +19,8 @@ function* getReindeerDistanceIterator(input) {
   let currentDistance = 0;
 
   for (let currentTime = 0; currentTime <= TIME; currentTime++) {
-    const isMoving = (currentTime % (time + rest) <= time) && (currentTime % (time + rest) !== 0);
+    const isMoving =
+      currentTime % (time + rest) <= time && currentTime % (time + rest) !== 0;
     if (isMoving) {
       currentDistance += speed;
     }
@@ -29,9 +30,12 @@ function* getReindeerDistanceIterator(input) {
 
 // Make a map of all distances for all reindeer:
 const allTraveledDistances = INPUT.reduce(
-  (map, reindeer) => map.set(
-    getReindeerName(reindeer), Array.from(getReindeerDistanceIterator(reindeer))
-  ), new Map()
+  (map, reindeer) =>
+    map.set(
+      getReindeerName(reindeer),
+      Array.from(getReindeerDistanceIterator(reindeer))
+    ),
+  new Map()
 );
 
 // Start gathering winners for each second:
@@ -40,7 +44,8 @@ for (let currentTime = 0; currentTime <= TIME; currentTime++) {
   let max = 0;
 
   for (const reindeerName of allTraveledDistances.keys()) {
-    const reindeerTraveled = allTraveledDistances.get(reindeerName)[currentTime];
+    const reindeerTraveled =
+      allTraveledDistances.get(reindeerName)[currentTime];
 
     if (reindeerTraveled >= max) {
       winnerInTheRound = reindeerName;
@@ -48,7 +53,10 @@ for (let currentTime = 0; currentTime <= TIME; currentTime++) {
     }
   }
 
-  reindeerPoints.set(winnerInTheRound, (reindeerPoints.get(winnerInTheRound) || 0) + 1);
+  reindeerPoints.set(
+    winnerInTheRound,
+    (reindeerPoints.get(winnerInTheRound) || 0) + 1
+  );
 }
 
 // Calculate the winner and points:

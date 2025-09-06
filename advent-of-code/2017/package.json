@@ -1,7 +1,7 @@
 {
   "name": "aoc2017",
   "version": "1.0.0",
-  "description": "aoc2017 solns",
+  "description": "aoc2017 solutions",
   "author": "hb20007",
   "license": "MIT",
   "devDependencies": {

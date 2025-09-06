@@ -1,15 +1,16 @@
-const partOne = (input) => { // NOSONAR
+const partOne = (input) => {
+  // NOSONAR
   input = input
     .split('\n')
     .map((event) => event.trim())
     .sort()
-    .map((event) => (
+    .map((event) =>
       event
         .match(
           /\[(\d{4})-(\d{2})-(\d{2}) (\d{2}):(\d{2})\] (\w+) #?(\d+\d+|\w+)/
         )
         .slice(1)
-    ));
+    );
 
   const sleepMinutes = {}; // Object counting how many times each guard was asleep for each minute
 
@@ -28,7 +29,8 @@ const partOne = (input) => { // NOSONAR
       if (!sleepMinutes[currentGuardId]) {
         sleepMinutes[currentGuardId] = {};
 
-        for (let key = 0; key < 60; key++) { // NOSONAR
+        for (let key = 0; key < 60; key++) {
+          // NOSONAR
           sleepMinutes[currentGuardId][key] = 0;
         }
       }
@@ -45,21 +47,24 @@ const partOne = (input) => { // NOSONAR
   }
 
   const mostMinutesSlept = Object.keys(sleepMinutes)
-    .map((guardId) => Object.values(sleepMinutes[guardId]).reduce(
-      (previousSleepCount, currentSleepCount) => (
-        previousSleepCount + currentSleepCount
-      ), 0
-    ))
-    .reduce((maxSleepTotal, currentSleepTotal) => (
+    .map((guardId) =>
+      Object.values(sleepMinutes[guardId]).reduce(
+        (previousSleepCount, currentSleepCount) =>
+          previousSleepCount + currentSleepCount,
+        0
+      )
+    )
+    .reduce((maxSleepTotal, currentSleepTotal) =>
       currentSleepTotal > maxSleepTotal ? currentSleepTotal : maxSleepTotal
-    ));
+    );
 
   const laziestGuardId = Object.keys(sleepMinutes).find(
-    (guardId) => Object.values(sleepMinutes[guardId]).reduce(
-      (previousSleepCount, currentSleepCount) => (
-        previousSleepCount + currentSleepCount
-      ), 0
-    ) === mostMinutesSlept
+    (guardId) =>
+      Object.values(sleepMinutes[guardId]).reduce(
+        (previousSleepCount, currentSleepCount) =>
+          previousSleepCount + currentSleepCount,
+        0
+      ) === mostMinutesSlept
   );
 
   let sleepiestMinute = -1;

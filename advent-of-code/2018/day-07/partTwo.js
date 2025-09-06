@@ -7,8 +7,8 @@ const partTwo = (input) => { // NOSONAR
   }
 
   function canBeTaken(step, takenSteps) {
-    const reqs = getRequirements(step);
-    return reqs.every((req) => takenSteps.includes(req));
+    const requirements = getRequirements(step);
+    return requirements.every((req) => takenSteps.includes(req));
   }
 
   const NO_OF_WORKERS = 5;
