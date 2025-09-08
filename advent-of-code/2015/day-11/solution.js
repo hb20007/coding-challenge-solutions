@@ -7,8 +7,8 @@ const hasStraightIncreasingSymbols = (string) =>
     .map((char) => char.charCodeAt(0))
     .some(
       (_, index, arr) =>
-        arr[index] === arr[index + 1] - 1
-        && arr[index + 1] === arr[index + 2] - 1
+        arr[index] === arr[index + 1] - 1 &&
+        arr[index + 1] === arr[index + 2] - 1
     );
 const hasRestrictedSymbols = (string) => /[iol]/.test(string);
 const hasPairs = (string) => /(\w)\1.*(\w)\2/.test(string);
@@ -24,9 +24,9 @@ const incrementString = (string) => {
 };
 
 const isValidPassword = (string) =>
-  hasStraightIncreasingSymbols(string)
-  && !hasRestrictedSymbols(string)
-  && hasPairs(string);
+  hasStraightIncreasingSymbols(string) &&
+  !hasRestrictedSymbols(string) &&
+  hasPairs(string);
 
 let result = INPUT;
 while (!isValidPassword(result)) result = incrementString(result);

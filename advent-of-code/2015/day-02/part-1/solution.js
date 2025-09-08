@@ -1,9 +1,6 @@
 const fs = require('fs');
 
-const INPUT = fs
-  .readFileSync(`${__dirname}/input.txt`)
-  .toString()
-  .split('\n');
+const INPUT = fs.readFileSync(`${__dirname}/input.txt`).toString().split('\n');
 
 const result = INPUT.reduce((totalArea, element) => {
   const [l, w, h] = element.split('x');

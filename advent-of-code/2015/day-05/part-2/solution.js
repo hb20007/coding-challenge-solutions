@@ -1,9 +1,6 @@
 const fs = require('fs');
 
-const INPUT = fs
-  .readFileSync(`${__dirname}/input.txt`)
-  .toString()
-  .split('\n');
+const INPUT = fs.readFileSync(`${__dirname}/input.txt`).toString().split('\n');
 
 const hasRepeatingPair = (string) => /([a-z][a-z]).*\1/.test(string);
 const hasLetterSandwich = (string) => /([a-z])[a-z]\1/.test(string);

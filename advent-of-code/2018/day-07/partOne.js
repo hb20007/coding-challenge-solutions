@@ -12,13 +12,15 @@ const partOne = (input) => {
   }
 
   let takenSteps = '';
-  let availableSteps = allSteps.filter((step) => getRequirements(step).length === 0);
+  let availableSteps = allSteps.filter(
+    (step) => getRequirements(step).length === 0
+  );
 
   while (availableSteps.length) {
     const step = availableSteps[0];
-    const possibleNextSteps = input.filter(
-      ([r, e]) => r === step && canBeTaken(e, takenSteps + step)
-    ).map((s) => s[1]); // possibleNextSteps can be empty.
+    const possibleNextSteps = input
+      .filter(([r, e]) => r === step && canBeTaken(e, takenSteps + step))
+      .map((s) => s[1]); // possibleNextSteps can be empty.
     const helperSet = new Set(availableSteps);
     helperSet.delete(step);
     possibleNextSteps.forEach((s) => helperSet.add(s));

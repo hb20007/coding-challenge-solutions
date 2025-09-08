@@ -1,5 +1,5 @@
 const partTwo = (input) => {
-  const reducePolymer = (polymer) => (
+  const reducePolymer = (polymer) =>
     [...polymer].reduce((reduced, char) => {
       const charCode = char.charCodeAt(0);
       const lastCharCode = reduced.charCodeAt(reduced.length - 1);
@@ -7,7 +7,7 @@ const partTwo = (input) => {
         return reduced.slice(0, -1);
       }
       return reduced + char;
-    }));
+    });
 
   // Array.from({ length: 26 }, (_, index) => index) returns the following: [0, 1, 2, ..., 25].
   const removedLengths = Array.from({ length: 26 }, (_, index) => {

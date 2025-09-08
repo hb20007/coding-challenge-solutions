@@ -18,14 +18,17 @@ const partOne = (input) => {
     return {
       children,
       metadata,
-      next
+      next,
     };
   }
 
   // Tree-walking function to sum the metadata
   function sumMetadata(node) {
     const metadataSum = node.metadata.reduce((sum, value) => sum + value);
-    const childrenSum = node.children.reduce((sum, child) => sum + sumMetadata(child), 0);
+    const childrenSum = node.children.reduce(
+      (sum, child) => sum + sumMetadata(child),
+      0
+    );
     return metadataSum + childrenSum;
   }
 

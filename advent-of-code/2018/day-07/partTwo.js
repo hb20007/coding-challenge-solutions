@@ -1,4 +1,5 @@
-const partTwo = (input) => { // NOSONAR
+const partTwo = (input) => {
+  // NOSONAR
   input = input.split('\n').map((line) => [line[5], line[36]]);
   const allSteps = [...new Set(input.flat())].sort();
 
@@ -47,9 +48,9 @@ const partTwo = (input) => { // NOSONAR
         const step = availableSteps.shift();
         return step
           ? {
-            step,
-            end: time + step.charCodeAt(0) - 4
-          }
+              step,
+              end: time + step.charCodeAt(0) - 4,
+            }
           : null;
       }
       return job;

@@ -14,7 +14,7 @@ const BITWISE_METHODS = {
   OR: (a, b) => a | b, // NOSONAR
   NOT: (a) => ~a, // NOSONAR
   LSHIFT: (a, b) => a << b, // NOSONAR
-  RSHIFT: (a, b) => a >> b // NOSONAR
+  RSHIFT: (a, b) => a >> b, // NOSONAR
 };
 
 // Parses an instruction and return an object with the command, arguments and destination wire:
@@ -26,7 +26,7 @@ const parseInstruction = (instruction) => {
   return {
     command: command?.[0],
     args: args.map((arg) => (Number.isNaN(Number(arg)) ? arg : Number(arg))),
-    destination
+    destination,
   };
 };
 
@@ -57,7 +57,7 @@ INPUT.forEach((instruction) => {
   const parsedInstruction = parseInstruction(instruction);
   WIRES.set(parsedInstruction.destination, {
     command: parsedInstruction.command,
-    args: parsedInstruction.args
+    args: parsedInstruction.args,
   });
 });
 

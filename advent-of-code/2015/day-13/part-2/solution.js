@@ -2,20 +2,21 @@ const fs = require('fs');
 
 const INPUT = fs.readFileSync(`${__dirname}/input.txt`, 'utf-8').split('\n');
 
-const PERSON_ATTRIBUTES_REGEX = /(\w+) would (\w+) (\d+) happiness units by sitting next to (\w+)./;
+const PERSON_ATTRIBUTES_REGEX =
+  /(\w+) would (\w+) (\d+) happiness units by sitting next to (\w+)./;
 
 // Generate all possible permutations for an array:
 const permuteArr = (input) => {
   const array = Array.from(input);
   const permute = (res, item, key, arr) =>
     res.concat(
-      (arr.length > 1
-        && arr
+      (arr.length > 1 &&
+        arr
           .slice(0, key)
           .concat(arr.slice(key + 1))
           .reduce(permute, [])
-          .map((perm) => [item].concat(perm)))
-        || item
+          .map((perm) => [item].concat(perm))) ||
+        item
     );
 
   return array.reduce(permute, []);

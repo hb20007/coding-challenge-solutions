@@ -6,7 +6,11 @@ const instructions = fs
   .split('\n')
   .map((line) => line.split(''));
 
-const DIALS = [[1, 2, 3], [4, 5, 6], [7, 8, 9]];
+const DIALS = [
+  [1, 2, 3],
+  [4, 5, 6],
+  [7, 8, 9],
+];
 const MAX_INDEX = DIALS.length - 1;
 
 const pos = { x: 1, y: 1 }; // We start at dial 5.

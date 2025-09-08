@@ -1,15 +1,12 @@
 const fs = require('fs');
 
-const lines = fs
-  .readFileSync(`${__dirname}/input.txt`)
-  .toString()
-  .split('\n');
+const lines = fs.readFileSync(`${__dirname}/input.txt`).toString().split('\n');
 
 function getSides(line) {
   return [
     Number(line.substr(0, 5)),
     Number(line.substr(5, 5)),
-    Number(line.substr(10, 5))
+    Number(line.substr(10, 5)),
   ];
 }
 
@@ -28,9 +25,9 @@ for (let i = 0; i < lines.length; i += 3) {
 
 function isTriangle(triangle) {
   return (
-    triangle[0] + triangle[1] > triangle[2]
-    && triangle[1] + triangle[2] > triangle[0]
-    && triangle[0] + triangle[2] > triangle[1]
+    triangle[0] + triangle[1] > triangle[2] &&
+    triangle[1] + triangle[2] > triangle[0] &&
+    triangle[0] + triangle[2] > triangle[1]
   );
 }
 

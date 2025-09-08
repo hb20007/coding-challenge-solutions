@@ -10,7 +10,7 @@ const partTwo = (banks) => {
 
     if (!patterns[snapshot]) {
       patterns[snapshot] = {
-        firstTimeSeenBefore: 0
+        firstTimeSeenBefore: 0,
       };
     }
 

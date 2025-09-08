@@ -1,9 +1,6 @@
 const fs = require('fs');
 
-const INPUT = fs
-  .readFileSync(`${__dirname}/input.txt`)
-  .toString()
-  .split('');
+const INPUT = fs.readFileSync(`${__dirname}/input.txt`).toString().split('');
 const santaDirections = INPUT.filter((_, i) => i % 2 === 0);
 const roboDirections = INPUT.filter((_, i) => i % 2 === 1);
 

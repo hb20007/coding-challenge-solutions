@@ -6,31 +6,31 @@ const TESTS = {
   part1: {
     test1: {
       input: 'aA',
-      result: 0
+      result: 0,
     },
     test2: {
       input: 'abBA',
-      result: 0
+      result: 0,
     },
     test3: {
       input: 'abAB',
-      result: 4
+      result: 4,
     },
     test4: {
       input: 'aabAAB',
-      result: 6
+      result: 6,
     },
     test5: {
       input: 'dabAcCaCBAcCcaDA',
-      result: 10
+      result: 10,
     },
   },
   part2: {
     test1: {
       input: 'dabAcCaCBAcCcaDA',
-      result: 4
-    }
-  }
+      result: 4,
+    },
+  },
 };
 
 describe('Part 1', () => {

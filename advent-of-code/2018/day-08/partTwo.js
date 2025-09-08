@@ -18,7 +18,7 @@ const partTwo = (input) => {
     return {
       children,
       metadata,
-      next
+      next,
     };
   }
 
@@ -28,7 +28,10 @@ const partTwo = (input) => {
     }
 
     return node.metadata.reduce((sum, index) => {
-      const value = index > node.children.length ? 0 : getNodeValue(node.children[index - 1]);
+      const value =
+        index > node.children.length
+          ? 0
+          : getNodeValue(node.children[index - 1]);
       return sum + value;
     }, 0);
   }

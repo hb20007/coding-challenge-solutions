@@ -1,5 +1,5 @@
 const partOne = (input) => {
-  const filterByLetterCount = (inputArray, count) => (
+  const filterByLetterCount = (inputArray, count) =>
     inputArray.filter((id) => {
       const letters = id.split('');
       const letterMap = {};
@@ -9,8 +9,7 @@ const partOne = (input) => {
       });
 
       return letters.find((letter) => letterMap[letter] === count);
-    })
-  );
+    });
 
   input = input.split('\n');
 

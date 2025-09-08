@@ -4,29 +4,28 @@ const instructions = fs
   .readFileSync(`${__dirname}/input.txt`)
   .toString()
   .split(', ')
-  .map(
-    (str) => ({
-      direction: str[0], blocks: parseInt(str.substring(1))
-    })
-  );
+  .map((str) => ({
+    direction: str[0],
+    blocks: parseInt(str.substring(1)),
+  }));
 
 const DIRECTIONS = {
   N: {
     L: 'W',
-    R: 'E'
+    R: 'E',
   },
   E: {
     L: 'N',
-    R: 'S'
+    R: 'S',
   },
   S: {
     L: 'E',
-    R: 'W'
+    R: 'W',
   },
   W: {
     L: 'S',
-    R: 'N'
-  }
+    R: 'N',
+  },
 };
 
 const result = instructions.reduce(

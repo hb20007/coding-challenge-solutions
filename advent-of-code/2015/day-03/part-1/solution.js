@@ -1,9 +1,6 @@
 const fs = require('fs');
 
-const INPUT = fs
-  .readFileSync(`${__dirname}/input.txt`)
-  .toString()
-  .split('');
+const INPUT = fs.readFileSync(`${__dirname}/input.txt`).toString().split('');
 
 const houses = new Set().add('0,0'); // Each pair of house coordinates will be a string in the format: 'x,y'. An array/object, each of which can be used below within the reduce() function, can't be used for the set due to the comparison of references as opposed to values.
 

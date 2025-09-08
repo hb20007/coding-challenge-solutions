@@ -35,13 +35,13 @@ const permuteSet = (set) => {
 
   const permute = (res, item, key, arr) =>
     res.concat(
-      (arr.length > 1
-        && arr
+      (arr.length > 1 &&
+        arr
           .slice(0, key)
           .concat(arr.slice(key + 1))
           .reduce(permute, [])
-          .map((perm) => [item].concat(perm)))
-        || item
+          .map((perm) => [item].concat(perm))) ||
+        item
     );
 
   return array.reduce(permute, []);

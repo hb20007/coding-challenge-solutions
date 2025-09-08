@@ -3,10 +3,7 @@ const partTwo = (input) => {
     .split('\n')
     .map((n) => n.split(/\s+/))
     .map((arr) => {
-      const pos = arr[2]
-        .replace(':', '')
-        .split(',')
-        .map(Number);
+      const pos = arr[2].replace(':', '').split(',').map(Number);
       const dimensions = arr[3].split('x').map(Number);
       return pos.concat(dimensions);
     });

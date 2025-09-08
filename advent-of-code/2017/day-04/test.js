@@ -8,7 +8,7 @@ describe('Day 4: High-Entropy Passphrases', () => {
       const PASSPHRASES = [
         ['aa', 'bb', 'cc', 'dd', 'ee'],
         ['aa', 'bb', 'cc', 'dd', 'aa'],
-        ['aa', 'bb', 'cc', 'dd', 'aaa']
+        ['aa', 'bb', 'cc', 'dd', 'aaa'],
       ];
 
       assert.strictEqual(2, partOne(PASSPHRASES));
@@ -22,7 +22,7 @@ describe('Day 4: High-Entropy Passphrases', () => {
         ['abcde', 'xyz', 'ecdab'],
         ['a', 'ab', 'abc', 'abd', 'abf', 'abj'],
         ['iiii', 'oiii', 'ooii', 'oooi', 'oooo'],
-        ['oiii', 'ioii', 'iioi', 'iiio']
+        ['oiii', 'ioii', 'iioi', 'iiio'],
       ];
 
       assert.strictEqual(3, partTwo(PASSPHRASES));

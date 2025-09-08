@@ -21,11 +21,10 @@ const partOne = (num) => {
   const restDistanceToCenter = firstDistanceToCenter + 1;
 
   function getSteps(baseCorner, steps, distanceToCenter) {
-    const offset = (
+    const offset =
       // I got this formula by thinking graphically about the function I want.
       // The interplay between the negative sign and the absolute value creates the logic:
-      -Math.abs(num - baseCorner - distanceToCenter) + distanceToCenter
-    );
+      -Math.abs(num - baseCorner - distanceToCenter) + distanceToCenter;
     return steps - offset;
   }
 
