@@ -2,7 +2,7 @@
 import re
 
 
-def meets_criteria2(pwd: int) -> bool:
+def meets_criteria_2(pwd: int) -> bool:
 	pwd_as_str = str(pwd)
 
 	# We need to find a group of strictly 2 repeating digits. In the 2nd RE,
@@ -16,5 +16,5 @@ def meets_criteria2(pwd: int) -> bool:
 	)
 
 
-def count_possible_pwds2(start: int, end: int) -> int:
-	return sum(meets_criteria2(num) for num in range(start, end + 1))
+def count_possible_pwds_2(start: int, end: int) -> int:
+	return sum(meets_criteria_2(num) for num in range(start, end + 1))

@@ -13,7 +13,7 @@ function getSides(line) {
 const triangles = [];
 
 for (let i = 0; i < lines.length; i += 3) {
-  // We read 3 triangles at a time:
+  // We read three triangles at a time:
   const sides1 = getSides(lines[i]);
   const sides2 = getSides(lines[i + 1]);
   const sides3 = getSides(lines[i + 2]);

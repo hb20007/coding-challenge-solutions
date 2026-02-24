@@ -15,7 +15,7 @@ class Solution:
         """
         # SOLUTION 1: STRAIGHTFORWARD APPROACH
         sign = (x > 0) - (x < 0)
-        x = x * sign # Remove sign
+        x = x * sign # Remove sign.
 
         ans = 0
         while x > 0:

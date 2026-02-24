@@ -13,10 +13,10 @@ def has_double(pwd: list[str]):
 	return False
 
 
-def meets_criteria2(pwd: int) -> bool:
+def meets_criteria_2(pwd: int) -> bool:
 	pwd_as_list = list(str(pwd))
 	return is_increasing(pwd_as_list) and has_double(pwd_as_list)
 
 
-def count_possible_pwds2(start: int, end: int) -> int:
-	return sum(meets_criteria2(num) for num in range(start, end + 1))
+def count_possible_pwds_2(start: int, end: int) -> int:
+	return sum(meets_criteria_2(num) for num in range(start, end + 1))

@@ -12,7 +12,7 @@ describe('Part 1', () => {
 });
 
 describe('Part 2', () => {
-  it('should return claim id 3 (no overlap)', () => {
+  it('should return claim ID 3 (no overlap)', () => {
     const input = `#1 @ 1,3: 4x4
 #2 @ 3,1: 4x4
 #3 @ 5,5: 2x2`;

@@ -24,7 +24,7 @@ const partTwo = (input) => {
   // We loop through all claims and find the one where
   // none of its coords have a frequency > 1 in the coord map:
 
-  let correctClaimId = -1;
+  let correctClaimID = -1;
 
   input.forEach((arr, claimIndex) => {
     for (let i = arr[0]; i < arr[0] + arr[2]; i++) {
@@ -36,10 +36,10 @@ const partTwo = (input) => {
       }
     }
     // We will reach this code only for the claim that does not overlap with any other.
-    correctClaimId = claimIndex + 1; // The ids are one-based.
+    correctClaimID = claimIndex + 1; // The IDs are one-based.
   });
 
-  return correctClaimId;
+  return correctClaimID;
 };
 
 module.exports = partTwo;
