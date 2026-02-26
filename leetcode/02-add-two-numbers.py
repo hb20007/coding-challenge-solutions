@@ -27,15 +27,15 @@ class Solution:
         :rtype: ListNode
         """
 
-        # SOLUTION 1: NAIVE (Converting from linked list to integers then back to linked lists)
+        # SOLUTION 1: NAIVE (Converting from linked lists to integers, then back to linked lists)
         n1, multiplier = 0, 1
-        while l1: # Converting the first number to an int
+        while l1: # Converting the first number to an integer
             n1 += multiplier * l1.val
             multiplier *= 10
             l1 = l1.next
 
         n2, multiplier = 0, 1
-        while l2: # Converting the second number to an int
+        while l2: # Converting the second number to an integer
             n2 += multiplier * l2.val
             multiplier *= 10
             l2 = l2.next
@@ -51,7 +51,7 @@ class Solution:
         return l3
 
         # SOLUTION 2: USING A CARRY
-        # An extra advantage of this approach is that the size of the input is not limited to the language's largest possible size of an int, since we don't use ints to store the numbers.
+        # An additional advantage of this approach is that the length of the input is not limited to the language's largest possible integer length, since we don't use integers to store the numbers.
         # Time complexity : O(max(len(11), len(l2))). The algorithm iterates at most max(len(11), len(l2)) times.
         # Space complexity : O(max(len(11), len(l2))). The length of the new list is at most max(len(11), len(l2)) + 1.
         carry = 0
@@ -67,7 +67,7 @@ class Solution:
 
             carry, val = divmod(val1 + val2 + carry, 10)
             n.next = n = ListNode(val)
-        return root.next # We add an arbitrary node "dummy head" as the first node, and then we remove it here. It makes the logic in the while loop more intuitive without having to pay special attention to the first node.
+        return root.next # We add an arbitrary "dummy head" as the first node, and then we remove it here. It makes the logic in the while loop more intuitive without requiring special attention for the first node.
 
         # SOLUTION 3: EXTRA OPTIMIZATION
         # We use the carry variable for things beyond what its name implies to avoid creating new variables.

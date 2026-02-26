@@ -26,7 +26,7 @@ class Solution:
 
         # SOLUTION 2: HACKY SOLUTION
         xs = str(x)
-        xr = int("-" + xs[:0:-1]) if xs[0] == "-" else int(xs[::-1]) # xs[:0:-1] is the same as xs[1:] then xs[::-1]. The reason is that when we use -1 as the last arg, we count from the end, so we need to reverse the arguments. So instead of [1:] it should now be [:1] or rather [:0] because the second argument is strict comparison as opposed to less/greater than or equal to comparison.
+        xr = int("-" + xs[:0:-1]) if xs[0] == "-" else int(xs[::-1]) # xs[:0:-1] is the same as xs[1:] followed by xs[::-1]. The reason is that when we use -1 as the last argument, we count from the end, so we need to reverse the arguments. So instead of [1:], it should now be [:1] or rather [:0] because the second argument is a strict comparison as opposed to a less/greater than or equal to comparison.
         return xr if 2147483647 >= xr >= -2147483648 else 0 # Note the simplified notation of chained comparison. Writing the numbers in hex (0x7FFFFFFF and 0x80000000) doesn't work because Python doesn't use 32-bit unsigned for hex representation. What would have also worked is checking if abs(xr) <= 0x7FFFFFFF.
 
         # SOLUTION 3: CODE GOLF

@@ -22,7 +22,7 @@ const permuteArr = (input) => {
   return array.reduce(permute, []);
 };
 
-// Parse input and return map with attributes of each person:
+// Parse input and return a map with the attributes of each person:
 const getPersonAttributes = (input) =>
   input.reduce((map, person) => {
     const parsed = person.match(PERSON_ATTRIBUTES_REGEX);

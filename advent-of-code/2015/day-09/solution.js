@@ -63,7 +63,7 @@ const allPossibleDistances = allPossibleRoutes.reduce((acc, route) => {
   return acc.concat([total]);
 }, []);
 
-// For part 2, just change "min" below to "max".
+// For part 2, change "min" below to "max".
 const result = Math.min.apply(null, allPossibleDistances);
 
 console.log(result);

@@ -22,7 +22,7 @@ const partTwo = (input) => {
   });
 
   // We loop through all claims and find the one where
-  // none of its coords have a frequency > 1 in the coord map:
+  // none of its coordinates have a frequency > 1 in the coordinate map:
 
   let correctClaimID = -1;
 

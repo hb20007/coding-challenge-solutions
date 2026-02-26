@@ -14,7 +14,7 @@ class Solution:
         """
         # SOLUTION: REVERSE HALF OF THE NUMBER
         if x < 0 or (x % 10 == 0 and x != 0):
-            return False # Negative numbers are not palindromes. Also, numbers that end with 0 that are not 0.
+            return False # Negative numbers and non-zero numbers ending with 0 are not palindromes.
 
         reversed_x = 0
         while x > reversed_x:

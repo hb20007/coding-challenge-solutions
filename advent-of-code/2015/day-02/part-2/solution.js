@@ -3,8 +3,8 @@ const fs = require('fs');
 const INPUT = fs.readFileSync(`${__dirname}/input.txt`).toString().split('\n');
 
 const result = INPUT.reduce((totalLength, element) => {
-  const sides = element.split('x').map(Number); // We map using Number() in order to use '!==' to compare with an int.
-  const maxSideIndex = sides.indexOf(Math.max(...sides)); // We use the index because two sides can be the max side, but we want to remove only one.
+  const sides = element.split('x').map(Number); // We map using Number() to be able to use "!=="" for comparison with integers.
+  const maxSideIndex = sides.indexOf(Math.max(...sides)); // We use the index because two sides can be the maximum side, but we want to remove only one.
   return (
     totalLength +
     sides.reduce(Math.imul) +

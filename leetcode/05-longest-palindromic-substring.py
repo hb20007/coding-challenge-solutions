@@ -50,11 +50,11 @@ class Solution:
         # Space complexity: O(n^2)
 
         # SOLUTION 3: DYNAMIC PROGRAMMING (DP)
-        # Idea: If we knew that "bab" is a palindrome, it is obvious that "ababa" must be a palindrome since the two end letters are the same. We start with 1-letter palindromes and then move to 2, 3-letter ones, etc.
+        # Idea: If "bab" is a palindrome, it is obvious that "ababa" must be a palindrome since the two end letters are the same. We start with single-letter palindromes and then progress to two-letter, three-letter, and longer ones.
         # We can expand the palindrome from its center, and there are 2n - 1 such centers. It is 2n - 1 because the center of a palindrome can be between two letters. Such palindromes have an even number of letters (such as "abba"). So we consider letters as centers, but also the spaces between the letters.
         # Time complexity: O(n^2)
         # Space complexity: O(1)
-        start = end = 0 # These will represent the longest palindrome. We work fully with indices, and only retrieve the actual characters in the helper function when checking.
+        start = end = 0 # These will represent the longest palindrome. We work fully with indices and only retrieve the actual characters in the helper function when checking.
         for i in range(len(s)):
             cand1 = self.expand_around_center_to_find_longest_p(s, i, i) # Taking the current character as the center
             cand2 = self.expand_around_center_to_find_longest_p(s, i, i + 1) # Taking the center to be the current character and the next one
@@ -62,7 +62,7 @@ class Solution:
             if longest > end - start + 1:
                 start = i - (longest - 1) // 2
                 end = i + longest // 2
-        return s[start:end + 1] # Optimization can be added by having special cases for palindromes of length one. There is also no need to expand and search for palindromes at the edges. Also, we can return if the longest palindrome ever gets to be equal to the length of the whole string.
+        return s[start:end + 1] # Optimization can be added by having special cases for palindromes of length one. There is also no need to expand and search for palindromes at the edges. Also, we can return if the length of the longest palindrome equals the length of the whole string.
 
         # SOLUTION 4: MANACHER'S ALGORITHM (O(n))
         # Good explanation: https://www.youtube.com/watch?v=nbTSfrEfo6M

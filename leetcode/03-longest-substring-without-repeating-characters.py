@@ -52,7 +52,7 @@ class Solution:
         # In the naive approach, we repeatedly check a substring to see if it has duplicate characters. But this is unnecessary. If a substring s_{ij}s from index i to j - 1 is already checked to have no duplicate characters, we only need to check if s[j] is already in the substring s.
         # A window is a range of elements in the array or string defined by the start and end indices, i.e., [i, j).
         # We use a set to store the characters in the current window, [i, j) (j = i initially). Then we slide the index j to the right, until we find a s[j] already in the HashSet. At this point, we found the maximum size of substrings without duplicate characters starting with index i. If we do this for all i, we get our answer.
-        # Time complexity = O(2n) = O(n). This is because, in the worst case, each char will be visited twice by i and j.
+        # Time complexity = O(2n) = O(n). This is because, in the worst case, each character will be visited twice by i and j.
         ans = i = j = 0
         hash_set = set()
         while i in range(len(s)) and j in range(len(s)):
@@ -61,7 +61,7 @@ class Solution:
                 hash_set.add(s[j])
                 j += 1
                 ans = max(ans, j - 1)
-            else: # This is the most important part: Removing the first character from the set and moving i.
+            else: # This is the most important part: removing the first character from the set and moving i.
                 hash_set.remove(s[i])
                 i += 1
         return ans
@@ -73,7 +73,7 @@ class Solution:
         dict_buff = {}
         for j in range(len(s)):
             if s[j] in dict_buff:
-                i = max(dict_buff[s[j]], i) # If s[j] has a duplicate in the range [i, j) with index j', we don't need to increase i little by little. We can skip all the elements in the range [i, j'] and let i be j' + 1 directly.
+                i = max(dict_buff[s[j]], i) # If s[j] has a duplicate in the range [i, j) with index j', we don't need to increase i little by little. We can skip all the elements in the range [i, j'] and assign i to j' + 1 directly.
             ans = max(ans, j - i + 1) # The "+ 1" is another optimization. This is what allowed the loop condition to be in terms of j only. Think about the case of i = j = 0, where the answer should be 1.
             dict_buff[s[j]] = j + 1
         return ans

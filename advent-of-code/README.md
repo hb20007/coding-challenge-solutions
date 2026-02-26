@@ -1,6 +1,6 @@
 # :christmas_tree: Advent of Code
 
-[Advent of Code](https://adventofcode.com/) is an event where each year, starting on December 1st, a new programming puzzle is posted once a day. Advent of Code began in 2015.
+[Advent of Code](https://adventofcode.com/) is an event where each year, starting on December 1st, a new programming puzzle is posted every day. Advent of Code began in 2015.
 
 ## Index
 

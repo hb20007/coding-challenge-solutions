@@ -17,7 +17,7 @@ const BITWISE_METHODS = {
   RSHIFT: (a, b) => a >> b, // NOSONAR
 };
 
-// Parses an instruction and return an object with the command, arguments and destination wire:
+// Parses an instruction and returns an object with the command, arguments, and destination wire:
 const parseInstruction = (instruction) => {
   const command = instruction.match(COMMAND_REGEX); // e.g., ['OR']; can also be null
   const args = instruction.match(ARGUMENTS_REGEX); // e.g., ['eh'], or ['hg, '3']

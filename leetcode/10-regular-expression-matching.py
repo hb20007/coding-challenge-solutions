@@ -24,10 +24,10 @@ class Solution:
         if not pattern:
             return not text # It's a match if both are empty.
 
-        first_match = bool(text) and pattern[0] in {text[0], '.'} # text is not empty and the first char matches
+        first_match = bool(text) and pattern[0] in {text[0], '.'} # text is not empty and the first character matches
 
         if len(pattern) >= 2 and pattern[1] == '*': # The Kleene star is dealt with separately.
-            return (self.is_match(text, pattern[2:]) # This usually runs until both text and pattern[2:] are empty. This line represents the case when there are 0 occurrences of the character with the *.
+            return (self.is_match(text, pattern[2:]) # This usually runs until both text and pattern[2:] are empty. This line represents the case where there are 0 occurrences of the character followed by '*'.
                     or first_match and self.is_match(text[1:], pattern)) # The second argument is the pattern itself. This allows us to match the same character in a pattern multiple times, as long as the one after it is a star.
 
         else:

@@ -5,9 +5,9 @@ import re
 def meets_criteria_2(pwd: int) -> bool:
 	pwd_as_str = str(pwd)
 
-	# We need to find a group of strictly 2 repeating digits. In the 2nd RE,
-	# we use negative lookahead and negative lookbehind to make sure that
-	# the digits matched are indeed strictly 2 in number.
+	# We need to find a group of strictly two repeating digits. In the second RE,
+	# we use negative lookahead and negative lookbehind to ensure that
+	# exactly two digits are matched.
 	# The negative lookbehind with a fixed-length group reference (?<!\1..)
 	# was added in Python 3.5.
 	return bool(
