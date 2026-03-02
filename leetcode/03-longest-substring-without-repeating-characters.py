@@ -18,12 +18,12 @@ class Solution:
             my_set.add(string[i])
         return True
 
-    def length_of_longest_substring(self, s):
+    # SOLUTION 1: NAIVE
+    def length_of_longest_substring_1(self, s):
         """
         :type s: str
         :rtype: int
         """
-        # SOLUTION 1: NAIVE
         longest = 0
         buffer_str = "" # Can also use a set: buffer = set(). Same performance.
         for _ in s:
@@ -38,9 +38,10 @@ class Solution:
                     break
         return longest
 
-        # SOLUTION 2: A DIFFERENT APPROACH
-        # Iterate through all possible substrings and check them.
-        # Time complexity: O(n^3) (Worse than the previous solution)
+    # SOLUTION 2: A DIFFERENT APPROACH
+    # Iterate through all possible substrings and check them.
+    # Time complexity: O(n^3) (Worse than the previous solution)
+    def length_of_longest_substring_2(self, s):
         ans = 0
         for i in range(0, len(s)):
             for j in range(i + 1, len(s) + 1):
@@ -48,11 +49,12 @@ class Solution:
                     ans = max(ans, j - i)
         return ans
 
-        # SOLUTION 3: SLIDING WINDOW
-        # In the naive approach, we repeatedly check a substring to see if it has duplicate characters. But this is unnecessary. If a substring s_{ij}s from index i to j - 1 is already checked to have no duplicate characters, we only need to check if s[j] is already in the substring s.
-        # A window is a range of elements in the array or string defined by the start and end indices, i.e., [i, j).
-        # We use a set to store the characters in the current window, [i, j) (j = i initially). Then we slide the index j to the right, until we find a s[j] already in the HashSet. At this point, we found the maximum size of substrings without duplicate characters starting with index i. If we do this for all i, we get our answer.
-        # Time complexity = O(2n) = O(n). This is because, in the worst case, each character will be visited twice by i and j.
+    # SOLUTION 3: SLIDING WINDOW
+    # In the naive approach, we repeatedly check a substring to see if it has duplicate characters. But this is unnecessary. If a substring s_{ij}s from index i to j - 1 is already checked to have no duplicate characters, we only need to check if s[j] is already in the substring s.
+    # A window is a range of elements in the array or string defined by the start and end indices, i.e., [i, j).
+    # We use a set to store the characters in the current window, [i, j) (j = i initially). Then we slide the index j to the right, until we find a s[j] already in the HashSet. At this point, we found the maximum size of substrings without duplicate characters starting with index i. If we do this for all i, we get our answer.
+    # Time complexity = O(2n) = O(n). This is because, in the worst case, each character will be visited twice by i and j.
+    def length_of_longest_substring_3(self, s):
         ans = i = j = 0
         hash_set = set()
         while i in range(len(s)) and j in range(len(s)):
@@ -66,9 +68,10 @@ class Solution:
                 i += 1
         return ans
 
-        # SOLUTION 4: SLIDING WINDOW OPTIMIZED
-        # Instead of using a set to detect duplicates, we can define a mapping of the characters to their indices. Then we can skip the characters immediately when we find a repeated character.
-        # Time complexity: O(n)
+    # SOLUTION 4: SLIDING WINDOW OPTIMIZED
+    # Instead of using a set to detect duplicates, we can define a mapping of the characters to their indices. Then we can skip the characters immediately when we find a repeated character.
+    # Time complexity: O(n)
+    def length_of_longest_substring_4(self, s):
         ans = i = 0
         dict_buff = {}
         for j in range(len(s)):

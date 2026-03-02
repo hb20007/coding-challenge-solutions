@@ -12,15 +12,14 @@ is_match("aab", "c*a*b") → true
 
 
 class Solution:
-    def is_match(self, text, pattern):
+    # SOLUTION 1: RECURSION
+    # Very slow
+    def is_match_1(self, text, pattern):
         """
         :type text: str
         :type pattern: str
         :rtype: bool
         """
-
-        # SOLUTION 1: RECURSION
-        # Very slow
         if not pattern:
             return not text # It's a match if both are empty.
 
@@ -33,7 +32,8 @@ class Solution:
         else:
             return first_match and self.is_match(text[1:], pattern[1:]) # It's trivial if no * is involved.
 
-        # SOLUTION 2: DYNAMIC PROGRAMMING (DP), TOP-DOWN APPROACH
+    # SOLUTION 2: DYNAMIC PROGRAMMING (DP), TOP-DOWN APPROACH
+    def is_match_2(self, text, pattern):
         memo = {} # Used to cache intermediate results
 
         def dp(i, j): # Because calls will only ever be made to match(text[i:], pattern[j:]), we use dp(i, j) to handle those calls instead, saving us expensive string-building operations and allowing us to cache the intermediate results.
@@ -52,7 +52,8 @@ class Solution:
 
         return dp(0, 0) # dp(i, j) represents the question "Do text[i:] and pattern[j:] match?" This is why we call dp(0,0).
 
-        # SOLUTION 3: DP, BOTTOM-UP APPROACH
+    # SOLUTION 3: DP, BOTTOM-UP APPROACH
+    def is_match_3(self, text, pattern):
         dp = [[False] * (len(pattern) + 1) for _ in range(len(text) + 1)]
 
         dp[-1][-1] = True

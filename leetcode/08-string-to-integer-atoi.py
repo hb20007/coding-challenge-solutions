@@ -12,12 +12,12 @@ The algorithm works as follows:
 class Solution:
     INT_MAX, INT_MIN = 0x7FFFFFFF, 0x80000000 # Python doesn't treat 0x80000000 as a signed integer, so we need to add a minus sign when we use it.
 
-    def my_atoi(self, str):
+    # SOLUTION 1: STRAIGHTFORWARD
+    def my_atoi_1(self, str):
         """
         :type str: str
         :rtype: int
         """
-        # SOLUTION 1: STRAIGHTFORWARD
         if not str:
             return 0
 
@@ -41,7 +41,8 @@ class Solution:
 
         return ans * sign
 
-        # SOLUTION 2: MORE IDIOMATIC PYTHON
+    # SOLUTION 2: MORE IDIOMATIC PYTHON
+    def my_atoi_2(self, str):
         if len(str) == 0:
             return 0
         ls = list(str.strip())

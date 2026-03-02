@@ -6,17 +6,18 @@ import statistics
 
 
 class Solution:
-    def find_median_sorted_arrays(self, nums1, nums2):
+    # SOLUTION 1: USING THE STATISTICS LIBRARY
+    def find_median_sorted_arrays_1(self, nums1, nums2):
         """
         :type nums1: List[int]
         :type nums2: List[int]
         :rtype: float
         """
-        # SOLUTION 1: USING THE STATISTICS LIBRARY
         nums1.extend(nums2)
         return statistics.median(sorted(nums1))
 
-        # SOLUTION 2: WITHOUT THE STATISTICS LIBRARY
+    # SOLUTION 2: WITHOUT THE STATISTICS LIBRARY
+    def find_median_sorted_arrays_2(self, nums1, nums2):
         nums1.extend(nums2)
         nums1.sort()
         n = len(nums1)

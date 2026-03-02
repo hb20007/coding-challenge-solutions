@@ -9,25 +9,26 @@ EXAMPLE
 Input: (2 -> 4 -> 3) + (5 -> 6 -> 4)
 Output: 7 -> 0 -> 8
 Explanation: 342 + 465 = 807.
+
+Definition for custom-defined singly-linked list:
+class ListNode:
+    def __init__(self, x):
+        self.val = x
+        self.next = None
 """
 
 
-# Definition for custom-defined singly-linked list.
-# class ListNode:
-#     def __init__(self, x):
-#         self.val = x
-#         self.next = None
+
 
 
 class Solution:
-    def add_two_numbers(self, l1, l2):
+    # SOLUTION 1: NAIVE (Converting from linked lists to integers, then back to linked lists)
+    def add_two_numbers_1(self, l1, l2):
         """
         :type l1: ListNode
         :type l2: ListNode
         :rtype: ListNode
         """
-
-        # SOLUTION 1: NAIVE (Converting from linked lists to integers, then back to linked lists)
         n1, multiplier = 0, 1
         while l1: # Converting the first number to an integer
             n1 += multiplier * l1.val
@@ -50,10 +51,11 @@ class Solution:
             l3_current = l3_current.next
         return l3
 
-        # SOLUTION 2: USING A CARRY
-        # An additional advantage of this approach is that the length of the input is not limited to the language's largest possible integer length, since we don't use integers to store the numbers.
-        # Time complexity : O(max(len(11), len(l2))). The algorithm iterates at most max(len(11), len(l2)) times.
-        # Space complexity : O(max(len(11), len(l2))). The length of the new list is at most max(len(11), len(l2)) + 1.
+    # SOLUTION 2: USING A CARRY
+    # An additional advantage of this approach is that the length of the input is not limited to the language's largest possible integer length, since we don't use integers to store the numbers.
+    # Time complexity : O(max(len(11), len(l2))). The algorithm iterates at most max(len(11), len(l2)) times.
+    # Space complexity : O(max(len(11), len(l2))). The length of the new list is at most max(len(11), len(l2)) + 1.
+    def add_two_numbers_2(self, l1, l2):
         carry = 0
         root = n = ListNode(0)
         while l1 or l2 or carry:
@@ -69,8 +71,9 @@ class Solution:
             n.next = n = ListNode(val)
         return root.next # We add an arbitrary "dummy head" as the first node, and then we remove it here. It makes the logic in the while loop more intuitive without requiring special attention for the first node.
 
-        # SOLUTION 3: EXTRA OPTIMIZATION
-        # We use the carry variable for things beyond what its name implies to avoid creating new variables.
+    # SOLUTION 3: EXTRA OPTIMIZATION
+    # We use the carry variable for things beyond what its name implies to avoid creating new variables.
+    def add_two_numbers_3(self, l1, l2):
         carry = 0
         res = n = ListNode(0)
         while l1 or l2 or carry:

@@ -7,12 +7,12 @@ Reversed integers might overflow.
 
 
 class Solution:
+    # SOLUTION: REVERSE HALF OF THE NUMBER
     def is_palindrome(self, x):
         """
         :type x: int
         :rtype: bool
         """
-        # SOLUTION: REVERSE HALF OF THE NUMBER
         if x < 0 or (x % 10 == 0 and x != 0):
             return False # Negative numbers and non-zero numbers ending with 0 are not palindromes.
 

@@ -10,14 +10,14 @@ For example, convert("PAYPALISHIRING", 3) should return "PAHNAPLSIIGYIR".
 
 
 class Solution:
-    def convert(self, s, num_rows):
+    # SOLUTION 1: NAIVE (BREAK DOWN TO PERIODS)
+    # Each zigzag pattern can be divided into repeating periods. Each period consists of a vertical line followed by a horizontal line that rises to the second row. In every period, every row will always have two characters, except for the first and last rows.
+    def convert_1(self, s, num_rows):
         """
         :type s: str
         :type numRows: int
         :rtype: str
         """
-        # SOLUTION 1: NAIVE (BREAK DOWN TO PERIODS)
-        # Each zigzag pattern can be divided into repeating periods. Each period consists of a vertical line followed by a horizontal line that rises to the second row. In every period, every row will always have two characters, except for the first and last rows.
         if num_rows <= 1 or len(s) < 2:
             return s
 
@@ -31,8 +31,9 @@ class Solution:
                     res += s[second_j]
         return res
 
-        # SOLUTION 2: BETTER APPROACH (TWO CASES: GOING DOWN, GOING UP DIAGONALLY)
-        # Create an array of strings with n strings, each containing a row of the zigzag representation. Traverse the string. To decide which row each character goes in, check if you are going down (to the next row) or up (to the previous row).
+    # SOLUTION 2: BETTER APPROACH (TWO CASES: GOING DOWN, GOING UP DIAGONALLY)
+    # Create an array of strings with n strings, each containing a row of the zigzag representation. Traverse the string. To decide which row each character goes in, check if you are going down (to the next row) or up (to the previous row).
+    def convert_2(self, s, num_rows):
         if not s or len(s) < 2 or num_rows < 2:
             return s
 
