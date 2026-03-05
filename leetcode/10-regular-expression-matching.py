@@ -33,7 +33,7 @@ class Solution:
             return first_match and self.is_match(text[1:], pattern[1:]) # It's trivial if no * is involved.
 
     # SOLUTION 2: DYNAMIC PROGRAMMING (DP), TOP-DOWN APPROACH
-    def is_match_2(self, text, pattern):
+    def is_match_2(self, text, pattern): # NOSONAR
         memo = {} # Used to cache intermediate results
 
         def dp(i, j): # Because calls will only ever be made to match(text[i:], pattern[j:]), we use dp(i, j) to handle those calls instead, saving us expensive string-building operations and allowing us to cache the intermediate results.

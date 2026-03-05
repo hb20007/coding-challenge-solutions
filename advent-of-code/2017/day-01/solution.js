@@ -1,10 +1,10 @@
-const { readFileSync } = require('fs');
+const { readFileSync } = require('node:fs');
 const partOne = require('./partOne');
 const partTwo = require('./partTwo');
 
 const INPUT = readFileSync(`${__dirname}/input.txt`, 'utf8')
   .split('')
-  .map((x) => parseInt(x));
+  .map((x) => Number.parseInt(x));
 
 console.log('PART 1:', partOne(INPUT));
 

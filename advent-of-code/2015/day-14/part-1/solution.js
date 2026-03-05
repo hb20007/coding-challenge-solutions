@@ -1,4 +1,4 @@
-const fs = require('fs');
+const fs = require('node:fs');
 
 const INPUT = fs.readFileSync(`${__dirname}/input.txt`, 'utf-8').split('\n');
 
@@ -13,8 +13,7 @@ const getReindeerDistance = (input) => {
 };
 
 const result = INPUT.reduce(
-  (max, reindeer) =>
-    getReindeerDistance(reindeer) > max ? getReindeerDistance(reindeer) : max,
+  (max, reindeer) => Math.max(getReindeerDistance(reindeer), max),
   0
 );
 

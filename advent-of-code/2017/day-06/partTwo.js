@@ -6,7 +6,7 @@ const partTwo = (banks) => {
 
   while (!patterns[snapshot]) {
     let bank = Math.max(...banks);
-    let currentIndex = banks.findIndex((x) => x === bank);
+    let currentIndex = banks.indexOf(bank);
 
     if (!patterns[snapshot]) {
       patterns[snapshot] = {

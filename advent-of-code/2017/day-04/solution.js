@@ -1,4 +1,4 @@
-const { readFileSync } = require('fs');
+const { readFileSync } = require('node:fs');
 const partOne = require('./partOne');
 const partTwo = require('./partTwo');
 

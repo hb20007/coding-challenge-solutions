@@ -1,4 +1,4 @@
-const fs = require('fs');
+const fs = require('node:fs');
 
 const lines = fs.readFileSync(`${__dirname}/input.txt`).toString().split('\n');
 
@@ -18,9 +18,11 @@ for (let i = 0; i < lines.length; i += 3) {
   const sides2 = getSides(lines[i + 1]);
   const sides3 = getSides(lines[i + 2]);
 
-  triangles.push([sides1[0], sides2[0], sides3[0]]);
-  triangles.push([sides1[1], sides2[1], sides3[1]]);
-  triangles.push([sides1[2], sides2[2], sides3[2]]);
+  triangles.push(
+    [sides1[0], sides2[0], sides3[0]],
+    [sides1[1], sides2[1], sides3[1]],
+    [sides1[2], sides2[2], sides3[2]]
+  );
 }
 
 function isTriangle(triangle) {

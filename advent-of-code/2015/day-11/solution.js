@@ -4,7 +4,7 @@ const INPUT = 'hxbxwxba';
 const hasStraightIncreasingSymbols = (string) =>
   string
     .split('')
-    .map((char) => char.charCodeAt(0))
+    .map((char) => char.codePointAt(0))
     .some(
       (_, index, arr) =>
         arr[index] === arr[index + 1] - 1 &&
@@ -14,7 +14,7 @@ const hasRestrictedSymbols = (string) => /[iol]/.test(string);
 const hasPairs = (string) => /(\w)\1.*(\w)\2/.test(string);
 
 const incrementChar = (char) =>
-  char === 'z' ? 'a' : String.fromCharCode(char.charCodeAt(0) + 1);
+  char === 'z' ? 'a' : String.fromCodePoint(char.codePointAt(0) + 1);
 
 const incrementString = (string) => {
   const nextChar = incrementChar(string.slice(-1));

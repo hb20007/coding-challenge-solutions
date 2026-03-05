@@ -1,10 +1,10 @@
-const { readFileSync } = require('fs');
+const { readFileSync } = require('node:fs');
 const partOne = require('./partOne');
 const partTwo = require('./partTwo');
 
 const INPUT = readFileSync(`${__dirname}/input.txt`, 'utf8')
   .split('\r\n')
-  .map((str) => parseInt(str));
+  .map((str) => Number.parseInt(str));
 
 console.log('PART 1:', partOne(INPUT.slice())); // We pass in a shallow copy because the function modifies the values in INPUT.
 

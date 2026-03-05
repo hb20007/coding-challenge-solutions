@@ -1,4 +1,4 @@
-const fs = require('fs');
+const fs = require('node:fs');
 
 const INPUT = JSON.parse(
   fs.readFileSync(`${__dirname}/input.txt`, 'utf-8'),
@@ -6,7 +6,7 @@ const INPUT = JSON.parse(
     if (!Array.isArray(value)) {
       return Object.keys(value)
         .map((key) => value[key])
-        .indexOf('red') !== -1
+        .includes('red')
         ? {}
         : value;
     }

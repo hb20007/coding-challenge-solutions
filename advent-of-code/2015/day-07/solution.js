@@ -1,4 +1,4 @@
-const fs = require('fs');
+const fs = require('node:fs');
 
 const INPUT = fs.readFileSync(`${__dirname}/input.txt`, 'utf-8').split('\n');
 
@@ -36,7 +36,7 @@ const calculateWire = (wireName) => {
 
   if (typeof wireName === 'number') return wireName;
   if (typeof wire === 'number') return wire;
-  if (typeof wire === 'undefined') return undefined;
+  if (wire === undefined) return undefined;
 
   if (wire.command) {
     WIRES.set(

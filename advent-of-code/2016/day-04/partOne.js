@@ -1,4 +1,4 @@
-const fs = require('fs');
+const fs = require('node:fs');
 
 function extractInfo(room) {
   // eslint-disable-next-line no-unused-vars

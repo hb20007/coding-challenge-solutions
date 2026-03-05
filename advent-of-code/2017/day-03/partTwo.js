@@ -7,7 +7,7 @@ const partTwo = (num) => {
     .toString()
     .split('\n')
     .slice(2)
-    .map((str) => parseInt(str.split(' ')[1]))
+    .map((str) => Number.parseInt(str.split(' ')[1]))
     .reverse();
   const nextIndex = sequenceInverted.findIndex((element) => element <= num);
 

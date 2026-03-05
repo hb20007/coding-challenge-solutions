@@ -1,4 +1,4 @@
-const fs = require('fs');
+const fs = require('node:fs');
 
 const INPUT = fs.readFileSync(`${__dirname}/input.txt`).toString().split('\n');
 
@@ -10,7 +10,7 @@ const result = INPUT.reduce((totalLength, element) => {
     sides.reduce(Math.imul) +
     sides.reduce(
       (perimeter, side, i) =>
-        i !== maxSideIndex ? perimeter + 2 * side : perimeter,
+        i === maxSideIndex ? perimeter : perimeter + 2 * side,
       0
     )
   );

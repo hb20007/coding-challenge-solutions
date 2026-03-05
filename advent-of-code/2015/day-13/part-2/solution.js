@@ -1,4 +1,4 @@
-const fs = require('fs');
+const fs = require('node:fs');
 
 const INPUT = fs.readFileSync(`${__dirname}/input.txt`, 'utf-8').split('\n');
 
@@ -19,7 +19,7 @@ const permuteArr = (input) => {
         item
     );
 
-  return array.reduce(permute, []);
+  return array.reduce(permute, []); // NOSONAR
 };
 
 // Parse input and return a map with the attributes of each person:
@@ -63,7 +63,7 @@ const totalHappiness = allPossiblePermutations.reduce(
       return total;
     }, 0);
 
-    return finalTotal > totalHappinessAcc ? finalTotal : totalHappinessAcc;
+    return Math.max(finalTotal, totalHappinessAcc);
   },
   0
 );

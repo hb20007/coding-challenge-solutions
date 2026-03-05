@@ -1,4 +1,4 @@
-const fs = require('fs');
+const fs = require('node:fs');
 
 const INPUT = fs.readFileSync(`${__dirname}/input.txt`).toString().split('');
 const santaDirections = INPUT.filter((_, i) => i % 2 === 0);
@@ -10,8 +10,8 @@ const traverse = (directions) => {
   const currentHouse = [0, 0];
   directions.forEach((direction) => {
     // Shorter but slower alternative to the switch statement used in part-1:
-    currentHouse[0] += ((direction === '>') | 0) - ((direction === '<') | 0);
-    currentHouse[1] += ((direction === '^') | 0) - ((direction === 'v') | 0);
+    currentHouse[0] += Number(direction === '>') - Number(direction === '<');
+    currentHouse[1] += Number(direction === '^') - Number(direction === 'v');
 
     houses.add(`${currentHouse[0]},${currentHouse[1]}`);
   });

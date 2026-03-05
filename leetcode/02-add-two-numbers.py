@@ -9,17 +9,14 @@ EXAMPLE
 Input: (2 -> 4 -> 3) + (5 -> 6 -> 4)
 Output: 7 -> 0 -> 8
 Explanation: 342 + 465 = 807.
+"""
 
-Definition for custom-defined singly-linked list:
+
+# Singly-linked list
 class ListNode:
     def __init__(self, x):
         self.val = x
         self.next = None
-"""
-
-
-
-
 
 class Solution:
     # SOLUTION 1: NAIVE (Converting from linked lists to integers, then back to linked lists)
@@ -77,7 +74,6 @@ class Solution:
         carry = 0
         res = n = ListNode(0)
         while l1 or l2 or carry:
-            val1 = val2 = 0
             if l1:
                 carry += l1.val
                 l1 = l1.next

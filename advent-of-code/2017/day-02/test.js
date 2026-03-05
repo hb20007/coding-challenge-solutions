@@ -1,4 +1,4 @@
-const assert = require('assert');
+const assert = require('node:assert');
 const partOne = require('./partOne');
 const partTwo = require('./partTwo');
 

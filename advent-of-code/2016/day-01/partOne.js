@@ -1,4 +1,4 @@
-const fs = require('fs');
+const fs = require('node:fs');
 
 const instructions = fs
   .readFileSync(`${__dirname}/input.txt`)
@@ -6,7 +6,7 @@ const instructions = fs
   .split(', ')
   .map((str) => ({
     direction: str[0],
-    blocks: parseInt(str.substring(1)),
+    blocks: Number.parseInt(str.substring(1)),
   }));
 
 const DIRECTIONS = {

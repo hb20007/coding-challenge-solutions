@@ -17,7 +17,7 @@ const partOne = (input) => { // NOSONAR
   let minuteFallsAsleep = -1;
   let minuteWakesUp = -1;
   for (const shift of input) {
-    const minute = parseInt(shift[4]);
+    const minute = Number.parseInt(shift[4]);
     const action = shift[5].toLowerCase();
 
     // Shift begins
@@ -53,7 +53,7 @@ const partOne = (input) => { // NOSONAR
       )
     )
     .reduce((maxSleepTotal, currentSleepTotal) =>
-      currentSleepTotal > maxSleepTotal ? currentSleepTotal : maxSleepTotal
+      Math.max(currentSleepTotal, maxSleepTotal)
     );
 
   const laziestGuardId = Object.keys(sleepMinutes).find(

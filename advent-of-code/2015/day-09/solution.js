@@ -1,4 +1,4 @@
-const fs = require('fs');
+const fs = require('node:fs');
 
 const INPUT = fs.readFileSync(`${__dirname}/input.txt`, 'utf-8').split('\n');
 
@@ -44,7 +44,7 @@ const permuteSet = (set) => {
         item
     );
 
-  return array.reduce(permute, []);
+  return array.reduce(permute, []); // NOSONAR
 };
 
 const places = buildPlacesSet(INPUT);

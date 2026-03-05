@@ -24,7 +24,7 @@ const partTwo = (input) => {
     // Take note of finished worker jobs:
     const finished = new Set();
     jobs = jobs.map((job) => {
-      if (job && job.end === time) {
+      if (job?.end === time) {
         finished.add(job.step);
         return null;
       }
@@ -49,7 +49,7 @@ const partTwo = (input) => {
         return step
           ? {
               step,
-              end: time + step.charCodeAt(0) - 4,
+              end: time + step.codePointAt(0) - 4,
             }
           : null;
       }
