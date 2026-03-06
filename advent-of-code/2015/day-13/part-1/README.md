@@ -25,10 +25,10 @@ David would lose 7 happiness units by sitting next to Bob.
 David would gain 41 happiness units by sitting next to Carol.
 ```
 
-Then, if you seat Alice next to David, Alice would lose 2 happiness units (because David talks so much), but David would gain 46 happiness units (because Alice is such a good listener), for a total change of 44.
+Then, if you seat Alice next to David, Alice would lose `2` happiness units (because David talks so much), but David would gain `46` happiness units (because Alice is such a good listener), for a total change of `44`.
 
-If you continue around the table, you could then seat Bob next to Alice (Bob gains 83, Alice gains 54).
-Finally, seat Carol, who sits next to Bob (Carol gains 60, Bob loses 7) and David (Carol gains 55, David gains 41).
+If you continue around the table, you could then seat Bob next to Alice (Bob gains `83`, Alice gains `54`).
+Finally, seat Carol, who sits next to Bob (Carol gains `60`, Bob loses `7`) and David (Carol gains `55`, David gains `41`).
 
 The arrangement looks like this:
 
@@ -40,6 +40,6 @@ Carol       Alice
      -7  +83
 ```
 
-After trying every other seating arrangement in this hypothetical scenario, you find that this one is the most optimal, with a total change in happiness of 330.
+After trying every other seating arrangement in this hypothetical scenario, you find that this one is the most optimal, with a total change in happiness of `330`.
 
 **What is the total change in happiness for the optimal seating arrangement of the actual guest list?**

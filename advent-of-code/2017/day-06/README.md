@@ -19,7 +19,7 @@ For example, imagine a scenario with only four memory banks:
 
 At this point, we've reached a state we've seen before: `2 4 1 2` was already seen. The infinite loop is detected after the fifth block redistribution cycle, and so the answer in this example is `5`.
 
-Given the initial block counts in your puzzle input, how many redistribution cycles must be completed before a configuration is produced that has been seen before?
+Given the initial block counts in your puzzle input, **how many redistribution cycles must be completed before a configuration is produced that has been seen before?**
 
 ## Part Two
 
@@ -27,4 +27,4 @@ Out of curiosity, the debugger would also like to know the size of the loop: sta
 
 In the example above, `2 4 1 2` is seen again after four cycles, and so the answer in that example would be `4`.
 
-How many cycles are in the infinite loop that arises from the configuration in your puzzle input?
+**How many cycles are in the infinite loop that arises from the configuration in your puzzle input?**

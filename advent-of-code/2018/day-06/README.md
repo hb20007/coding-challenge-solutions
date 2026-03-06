@@ -8,7 +8,7 @@ The device then produces a list of coordinates (your puzzle input). Are they pla
 
 **If they're dangerous,** maybe you can minimize the danger by finding the coordinate that gives the largest distance from the other points.
 
-Using only the [Manhattan distance](https://en.wikipedia.org/wiki/Taxicab_geometry), determine the **area** around each coordinate by counting the number of [integer](https://en.wikipedia.org/wiki/Integer) X,Y locations that are **closest** to that coordinate (and aren't **tied in distance** to any other coordinate).
+Using only the [Manhattan distance](https://en.wikipedia.org/wiki/Taxicab_geometry), determine the **area** around each coordinate by counting the number of [integer](https://en.wikipedia.org/wiki/Integer) X, Y locations that are **closest** to that coordinate (and aren't **tied in distance** to any other coordinate).
 
 Your goal is to find the size of the **largest area** that isn't infinite. For example, consider the following list of coordinates:
 
@@ -36,7 +36,7 @@ If we name these coordinates `A` through `F`, we can draw them on a grid, puttin
 ........F.
 ```
 
-This view is partial - the actual grid extends infinitely in all directions. Using the Manhattan distance, each location's closest coordinate can be determined, shown here in lowercase:
+This view is partial—the actual grid extends infinitely in all directions. Using the Manhattan distance, each location's closest coordinate can be determined, shown here in lowercase:
 
 ```
 aaaaa.cccc
@@ -53,7 +53,7 @@ bbb.ffffFf
 
 Locations shown as `.` are equally far from two or more coordinates, and so they don't count as being closest to any.
 
-In this example, the areas of coordinates A, B, C, and F are infinite - while not shown here, their areas extend forever outside the visible grid. However, the areas of coordinates D and E are finite: D is closest to 9 locations, and E is closest to 17 (both including the coordinate's location itself). Therefore, in this example, the size of the largest area is **17**.
+In this example, the areas of coordinates A, B, C, and F are infinite—while not shown here, their areas extend forever outside the visible grid. However, the areas of coordinates D and E are finite: D is closest to 9 locations, and E is closest to 17 (both including the coordinate's location itself). Therefore, in this example, the size of the largest area is **17**.
 
 **What is the size of the largest area** that isn't infinite?
 
@@ -76,7 +76,7 @@ For example, suppose you want the sum of the [Manhattan distance](https://en.wik
 ........F.
 ```
 
-In particular, consider the highlighted location `4,3` located at the top middle of the region. Its calculation is as follows, where `abs()` is the [absolute value](https://en.wikipedia.org/wiki/Absolute_value) function:
+In particular, consider the highlighted location `4, 3` located at the top middle of the region. Its calculation is as follows, where `abs()` is the [absolute value](https://en.wikipedia.org/wiki/Absolute_value) function:
 
 - Distance to coordinate A: `abs(4-1) + abs(3-1) =  5`
 - Distance to coordinate B: `abs(4-1) + abs(3-6) =  6`

@@ -11,9 +11,7 @@ However, the elf back at the north pole has had a little too much eggnog, and so
 For example:
 
 - `>` delivers presents to 2 houses: one at the starting location, and one to the east.
-
 - `^>v<` delivers presents to 4 houses in a square, including twice to the house at his starting/ending location.
-
 - `^v^v^v^v^v` delivers a bunch of presents to some very lucky children at only 2 houses.
 
 **How many houses receive at least one present?**

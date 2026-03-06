@@ -2,9 +2,9 @@
 
 You talk to the Elves while you wait for your navigation system to initialize. To pass the time, they introduce you to their favorite [marble](https://en.wikipedia.org/wiki/Marble_(toy)) game.
 
-The Elves play this game by taking turns arranging the marbles in a **circle** according to very particular rules. The marbles are numbered starting with 0 and increasing by 1 until every marble has a number.
+The Elves play this game by taking turns arranging the marbles in a **circle** according to very particular rules. The marbles are numbered starting with `0` and increasing by `1` until every marble has a number.
 
-First, the marble numbered 0 is placed in the circle. At this point, while it contains only a single marble, it is still a circle: the marble is both clockwise from itself and counter-clockwise from itself. This marble is designated the **current marble**.
+First, the marble numbered `0` is placed in the circle. At this point, while it contains only a single marble, it is still a circle: the marble is both clockwise from itself and counter-clockwise from itself. This marble is designated the **current marble**.
 
 Then, each Elf takes a turn placing the **lowest-numbered remaining marble** into the circle between the marbles that are `1` and `2` marbles **clockwise** of the current marble. (When the circle is large enough, this means that there is one marble between the marble that was just placed and the current marble.) The marble that was just placed then becomes the **current marble**.
 
@@ -41,7 +41,7 @@ For example, suppose there are 9 players. After the marble with value `0` is pla
 [7]  0 16  8 17  4 18 19  2 24 20(25)10 21  5 22 11  1 12  6 13  3 14  7 15
 ```
 
-The goal is to be the **player with the highest score** after the last marble is used up. Assuming the example above ends after the marble numbered `25`, the winning score is `23+9=32` (because player 5 kept marble `23` and removed marble `9`, while no other player got any points in this very short example game).
+The goal is to be the **player with the highest score** after the last marble is used up. Assuming the example above ends after the marble numbered `25`, the winning score is `23 + 9 = 32` (because player 5 kept marble `23` and removed marble `9`, while no other player got any points in this very short example game).
 
 Here are a few more examples:
 

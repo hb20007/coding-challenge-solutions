@@ -10,11 +10,8 @@ Your first job is to simply find all of the numbers throughout the document and 
 For example:
 
 - `[1,2,3]` and `{"a":2,"b":4}` both have a sum of `6`.
-
 - `[[[3]]]` and `{"a":{"b":4},"c":-1}` both have a sum of `3`.
-
 - `{"a":[-1,1]}` and `[-1,{"a":1}]` both have a sum of `0`.
-
 - `[]` and `{}` both have a sum of `0`.
 
 You will not encounter any strings containing numbers.

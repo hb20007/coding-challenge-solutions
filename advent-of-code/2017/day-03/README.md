@@ -21,7 +21,7 @@ For example:
 - Data from square `23` is carried only `2` steps: up twice.
 - Data from square `1024` must be carried `31` steps.
 
-How many steps are required to carry the data from the square identified in your puzzle input all the way to the access port?
+**How many steps are required to carry the data from the square identified in your puzzle input all the way to the access port?**
 
 ## Part Two
 
@@ -45,4 +45,4 @@ Once a square is written, its value does not change. Therefore, the first few sq
 362  747  806--->   ...
 ```
 
-What is the first value written that is larger than your puzzle input?
+**What is the first value written that is larger than your puzzle input?**
