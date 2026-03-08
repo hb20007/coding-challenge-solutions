@@ -1,7 +1,6 @@
-const fs = require('node:fs');
+import { readFileSync } from 'node:fs';
 
-const vertices = fs
-  .readFileSync(`${__dirname}/input.txt`)
+const vertices = readFileSync(`${import.meta.dirname}/input.txt`)
   .toString()
   .split('\n');
 

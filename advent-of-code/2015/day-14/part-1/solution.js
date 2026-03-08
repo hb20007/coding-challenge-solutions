@@ -1,6 +1,8 @@
-const fs = require('node:fs');
+import { readFileSync } from 'node:fs';
 
-const INPUT = fs.readFileSync(`${__dirname}/input.txt`, 'utf-8').split('\n');
+const INPUT = readFileSync(`${import.meta.dirname}/input.txt`, 'utf-8').split(
+  '\n'
+);
 
 const REINDEER_REGEX = /\d+/g;
 const TIME = 2503;

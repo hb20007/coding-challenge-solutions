@@ -48,6 +48,7 @@
       {
         "exceptRange": true
       }
-    ]
+    ],
+    "import/extensions": "off"
   }
 }

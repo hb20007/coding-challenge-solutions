@@ -1,12 +1,14 @@
-const fs = require('node:fs');
+import { readFileSync } from 'node:fs';
 
-const lines = fs.readFileSync(`${__dirname}/input.txt`).toString().split('\n');
+const lines = readFileSync(`${import.meta.dirname}/input.txt`)
+  .toString()
+  .split('\n');
 
 function getSides(line) {
   return [
     Number(line.substr(0, 5)),
     Number(line.substr(5, 5)),
-    Number(line.substr(10, 5)),
+    Number(line.substr(10, 5))
   ];
 }
 

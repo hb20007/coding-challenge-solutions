@@ -1,4 +1,4 @@
-const request = require('sync-request');
+import request from 'sync-request';
 
 // Sequence A141481 in the OEIS
 const partTwo = (num) => {
@@ -14,4 +14,4 @@ const partTwo = (num) => {
   return sequenceInverted[nextIndex - 1];
 };
 
-module.exports = partTwo;
+export default partTwo;

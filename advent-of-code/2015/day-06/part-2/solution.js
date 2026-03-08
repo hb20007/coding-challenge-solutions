@@ -1,6 +1,8 @@
-const fs = require('node:fs');
+import { readFileSync } from 'node:fs';
 
-const INPUT = fs.readFileSync(`${__dirname}/input.txt`, 'utf-8').split('\n');
+const INPUT = readFileSync(`${import.meta.dirname}/input.txt`, 'utf-8').split(
+  '\n'
+);
 
 const COMMANDS_REGEX =
   /(turn on|turn off|toggle) (\d+),(\d+) through (\d+),(\d+)/;

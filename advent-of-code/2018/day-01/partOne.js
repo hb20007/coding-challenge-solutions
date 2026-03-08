@@ -4,4 +4,4 @@ const partOne = (input) =>
     .map(Number)
     .reduce((result, change) => result + change);
 
-module.exports = partOne;
+export default partOne;

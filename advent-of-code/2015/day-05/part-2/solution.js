@@ -1,6 +1,8 @@
-const fs = require('node:fs');
+import { readFileSync } from 'node:fs';
 
-const INPUT = fs.readFileSync(`${__dirname}/input.txt`).toString().split('\n');
+const INPUT = readFileSync(`${import.meta.dirname}/input.txt`)
+  .toString()
+  .split('\n');
 
 const hasRepeatingPair = (string) => /([a-z][a-z]).*\1/.test(string);
 const hasLetterSandwich = (string) => /([a-z])[a-z]\1/.test(string);

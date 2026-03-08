@@ -26,4 +26,4 @@ const partOne = (input) => {
   return Math.max(...scores);
 };
 
-module.exports = partOne;
+export default partOne;

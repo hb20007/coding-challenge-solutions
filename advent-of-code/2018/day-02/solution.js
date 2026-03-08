@@ -1,9 +1,9 @@
-const { readFileSync } = require('node:fs');
-const Logger = require('@ptkdev/logger');
-const partOne = require('./partOne');
-const partTwo = require('./partTwo');
+import Logger from '@ptkdev/logger';
+import { readFileSync } from 'node:fs';
+import partOne from './partOne.js';
+import partTwo from './partTwo.js';
 
-const INPUT = readFileSync(`${__dirname}/input.txt`, 'utf8');
+const INPUT = readFileSync(`${import.meta.dirname}/input.txt`, 'utf8');
 const logger = new Logger();
 
 logger.info(partOne(INPUT), 'PART 1');

@@ -13,4 +13,4 @@ const partOne = (offsets) => {
   return steps;
 };
 
-module.exports = partOne;
+export default partOne;

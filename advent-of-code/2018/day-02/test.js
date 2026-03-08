@@ -1,6 +1,8 @@
-require('chai').should();
-const partOne = require('./partOne');
-const partTwo = require('./partTwo');
+import { should } from 'chai';
+import partOne from './partOne.js';
+import partTwo from './partTwo.js';
+
+should();
 
 describe('Part 1', () => {
   it('should return 12 as checksum', () => {

@@ -1,7 +1,7 @@
-const fs = require('node:fs');
+import { readFileSync } from 'node:fs';
 
 const INPUT = JSON.parse(
-  fs.readFileSync(`${__dirname}/input.txt`, 'utf-8'),
+  readFileSync(`${import.meta.dirname}/input.txt`, 'utf-8'),
   (_, value) => {
     if (!Array.isArray(value)) {
       return Object.keys(value)

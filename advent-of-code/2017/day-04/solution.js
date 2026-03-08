@@ -1,8 +1,8 @@
-const { readFileSync } = require('node:fs');
-const partOne = require('./partOne');
-const partTwo = require('./partTwo');
+import { readFileSync } from 'node:fs';
+import partOne from './partOne.js';
+import partTwo from './partTwo.js';
 
-const INPUT = readFileSync(`${__dirname}/input.txt`, 'utf8')
+const INPUT = readFileSync(`${import.meta.dirname}/input.txt`, 'utf8')
   .split('\r\n')
   .map((line) => line.split(' '));
 

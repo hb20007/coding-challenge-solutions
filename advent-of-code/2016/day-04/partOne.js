@@ -1,4 +1,4 @@
-const fs = require('node:fs');
+import { readFileSync } from 'node:fs';
 
 function extractInfo(room) {
   // eslint-disable-next-line no-unused-vars
@@ -8,8 +8,7 @@ function extractInfo(room) {
   return { name, sectorId, sum };
 }
 
-const rooms = fs
-  .readFileSync(`${__dirname}/input.txt`)
+const rooms = readFileSync(`${import.meta.dirname}/input.txt`)
   .toString()
   .split('\n')
   .map(extractInfo);

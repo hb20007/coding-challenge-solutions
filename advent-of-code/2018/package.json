@@ -4,6 +4,7 @@
   "description": "aoc2018 solutions",
   "author": "hb20007",
   "license": "MIT",
+  "type": "module",
   "devDependencies": {
     "eslint": "^8.42.0",
     "eslint-config-airbnb-base": "^15.0.0",

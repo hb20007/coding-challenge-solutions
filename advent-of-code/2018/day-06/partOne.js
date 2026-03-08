@@ -54,4 +54,4 @@ const partOne = (input) => { // NOSONAR
   return Math.max(...areas.filter(Boolean));
 };
 
-module.exports = partOne;
+export default partOne;

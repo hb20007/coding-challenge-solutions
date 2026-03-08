@@ -3,13 +3,13 @@ const partTwo = (input) => { // NOSONAR
     .split('\n')
     .map((event) => event.trim())
     .sort()
-    .map((event) => (
+    .map((event) =>
       event
         .match(
           /\[(\d{4})-(\d{2})-(\d{2}) (\d{2}):(\d{2})\] (\w+) #?(\d+\d+|\w+)/
         )
         .slice(1)
-    ));
+    );
 
   const sleepMinutes = {};
 
@@ -60,4 +60,4 @@ const partTwo = (input) => { // NOSONAR
   return +laziestGuardId * sleepiestMinute;
 };
 
-module.exports = partTwo;
+export default partTwo;

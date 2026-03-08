@@ -1,9 +1,11 @@
-require('chai').should();
-const partOne = require('./partOne');
-const partTwo = require('./partTwo');
+import { should } from 'chai';
+import partOne from './partOne.js';
+import partTwo from './partTwo.js';
+
+should();
 
 describe('Part 1', () => {
-  it('should return 17 with given coordinates', () => {
+  it('should return 17 with the given coordinates', () => {
     const input = `1, 1
 1, 6
 8, 3
@@ -15,7 +17,7 @@ describe('Part 1', () => {
 });
 
 describe('Part 2', () => {
-  it('should return 16 with given coordinates and with limit 32', () => {
+  it('should return 16 with the given coordinates and with limit 32', () => {
     const input = `1, 1
 1, 6
 8, 3

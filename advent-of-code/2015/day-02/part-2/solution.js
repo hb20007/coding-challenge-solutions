@@ -1,6 +1,8 @@
-const fs = require('node:fs');
+import { readFileSync } from 'node:fs';
 
-const INPUT = fs.readFileSync(`${__dirname}/input.txt`).toString().split('\n');
+const INPUT = readFileSync(`${import.meta.dirname}/input.txt`)
+  .toString()
+  .split('\n');
 
 const result = INPUT.reduce((totalLength, element) => {
   const sides = element.split('x').map(Number); // We map using Number() to be able to use "!=="" for comparison with integers.

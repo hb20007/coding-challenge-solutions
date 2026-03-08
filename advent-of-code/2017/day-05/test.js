@@ -1,19 +1,19 @@
-const assert = require('node:assert');
-const partOne = require('./partOne');
-const partTwo = require('./partTwo');
+import { strictEqual } from 'node:assert';
+import partOne from './partOne.js';
+import partTwo from './partTwo.js';
 
 describe('Day 5: A Maze of Twisty Trampolines, All Alike', () => {
   const OFFSETS = [0, 3, 0, 1, -3];
 
   describe('Part 1', () => {
-    it('should calculate 5 steps needed', () => {
-      assert.strictEqual(5, partOne(OFFSETS));
+    it('should calculate five steps needed', () => {
+      strictEqual(5, partOne(OFFSETS));
     });
   });
 
   describe('Part 2', () => {
-    it('should calculate 10 steps needed', () => {
-      assert.strictEqual(10, partTwo(OFFSETS));
+    it('should calculate ten steps needed', () => {
+      strictEqual(10, partTwo(OFFSETS));
     });
   });
 });

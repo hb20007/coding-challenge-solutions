@@ -49,7 +49,7 @@ const partTwo = (input) => {
         return step
           ? {
               step,
-              end: time + step.codePointAt(0) - 4,
+              end: time + step.codePointAt(0) - 4
             }
           : null;
       }
@@ -69,4 +69,4 @@ const partTwo = (input) => {
   return time;
 };
 
-module.exports = partTwo;
+export default partTwo;

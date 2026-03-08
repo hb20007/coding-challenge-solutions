@@ -18,7 +18,7 @@ const partTwo = (input) => {
     return {
       children,
       metadata,
-      next,
+      next
     };
   }
 
@@ -39,4 +39,4 @@ const partTwo = (input) => {
   return getNodeValue(buildTree(0));
 };
 
-module.exports = partTwo;
+export default partTwo;

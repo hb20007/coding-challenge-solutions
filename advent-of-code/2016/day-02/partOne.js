@@ -1,7 +1,6 @@
-const fs = require('node:fs');
+import { readFileSync } from 'node:fs';
 
-const instructions = fs
-  .readFileSync(`${__dirname}/input.txt`)
+const instructions = readFileSync(`${import.meta.dirname}/input.txt`)
   .toString()
   .split('\n')
   .map((line) => line.split(''));
@@ -9,7 +8,7 @@ const instructions = fs
 const DIALS = [
   [1, 2, 3],
   [4, 5, 6],
-  [7, 8, 9],
+  [7, 8, 9]
 ];
 const MAX_INDEX = DIALS.length - 1;
 

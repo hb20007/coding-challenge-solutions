@@ -1,6 +1,6 @@
-const fs = require('node:fs');
+import { readFileSync } from 'node:fs';
 
-const INPUT = fs.readFileSync(`${__dirname}/input.txt`).toString();
+const INPUT = readFileSync(`${import.meta.dirname}/input.txt`).toString();
 
 let result = 0;
 

@@ -1,6 +1,6 @@
-const assert = require('node:assert');
-const partOne = require('./partOne');
-const partTwo = require('./partTwo');
+import { strictEqual } from 'node:assert';
+import partOne from './partOne.js';
+import partTwo from './partTwo.js';
 
 describe('Day 2: Corruption Checksum', () => {
   describe('Part 1', () => {
@@ -8,10 +8,10 @@ describe('Day 2: Corruption Checksum', () => {
       const SPREADSHEET = [
         [5, 1, 9, 5],
         [7, 5, 3],
-        [2, 4, 6, 8],
+        [2, 4, 6, 8]
       ];
 
-      assert.strictEqual(18, partOne(SPREADSHEET));
+      strictEqual(18, partOne(SPREADSHEET));
     });
   });
 
@@ -20,10 +20,10 @@ describe('Day 2: Corruption Checksum', () => {
       const SPREADSHEET = [
         [5, 9, 2, 8],
         [9, 4, 7, 3],
-        [3, 8, 6, 5],
+        [3, 8, 6, 5]
       ];
 
-      assert.strictEqual(9, partTwo(SPREADSHEET));
+      strictEqual(9, partTwo(SPREADSHEET));
     });
   });
 });

@@ -29,4 +29,4 @@ const partOne = (banks) => {
   return reallocations;
 };
 
-module.exports = partOne;
+export default partOne;

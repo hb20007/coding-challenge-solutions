@@ -8,4 +8,4 @@ const partOne = (captcha) => {
   );
 };
 
-module.exports = partOne;
+export default partOne;

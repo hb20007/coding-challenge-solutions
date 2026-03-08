@@ -1,9 +1,11 @@
-require('chai').should();
-const partOne = require('./partOne');
-const partTwo = require('./partTwo');
+import { should } from 'chai';
+import partOne from './partOne.js';
+import partTwo from './partTwo.js';
+
+should();
 
 describe('Part 1', () => {
-  it('should return 240 with chosen transcript', () => {
+  it('should return 240 with the chosen transcript', () => {
     const input = `[1518-11-01 00:00] Guard #10 begins shift
 [1518-11-01 00:05] falls asleep
 [1518-11-01 00:25] wakes up
@@ -26,7 +28,7 @@ describe('Part 1', () => {
 });
 
 describe('Part 2', () => {
-  it('should return 4455 with chosen transcript', () => {
+  it('should return 4455 with the chosen transcript', () => {
     const input = `[1518-11-01 00:00] Guard #10 begins shift
 [1518-11-01 00:05] falls asleep
 [1518-11-01 00:25] wakes up

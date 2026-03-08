@@ -1,6 +1,6 @@
-const fs = require('node:fs');
+import { readFileSync } from 'node:fs';
 
-const INPUT = fs.readFileSync(`${__dirname}/input.txt`, 'utf-8');
+const INPUT = readFileSync(`${import.meta.dirname}/input.txt`, 'utf-8');
 
 const NUMBER_REGEX = /-?\d+/g;
 

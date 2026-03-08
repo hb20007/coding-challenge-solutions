@@ -21,4 +21,4 @@ const partTwo = (input) => {
   }
 };
 
-module.exports = partTwo;
+export default partTwo;

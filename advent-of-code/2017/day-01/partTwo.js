@@ -7,4 +7,4 @@ const partTwo = (captcha) => {
   );
 };
 
-module.exports = partTwo;
+export default partTwo;

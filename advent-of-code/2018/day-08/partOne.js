@@ -18,7 +18,7 @@ const partOne = (input) => {
     return {
       children,
       metadata,
-      next,
+      next
     };
   }
 
@@ -35,4 +35,4 @@ const partOne = (input) => {
   return sumMetadata(buildTree(0));
 };
 
-module.exports = partOne;
+export default partOne;

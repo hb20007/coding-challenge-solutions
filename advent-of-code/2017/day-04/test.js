@@ -1,31 +1,31 @@
-const assert = require('node:assert');
-const partOne = require('./partOne');
-const partTwo = require('./partTwo');
+import { strictEqual } from 'node:assert';
+import partOne from './partOne.js';
+import partTwo from './partTwo.js';
 
 describe('Day 4: High-Entropy Passphrases', () => {
   describe('Part 1', () => {
-    it('should count 2 valid passphrases', () => {
+    it('should count two valid passphrases', () => {
       const PASSPHRASES = [
         ['aa', 'bb', 'cc', 'dd', 'ee'],
         ['aa', 'bb', 'cc', 'dd', 'aa'],
-        ['aa', 'bb', 'cc', 'dd', 'aaa'],
+        ['aa', 'bb', 'cc', 'dd', 'aaa']
       ];
 
-      assert.strictEqual(2, partOne(PASSPHRASES));
+      strictEqual(2, partOne(PASSPHRASES));
     });
   });
 
   describe('Part 2', () => {
-    it('should count 3 valid passphrases', () => {
+    it('should count three valid passphrases', () => {
       const PASSPHRASES = [
         ['abcde', 'fghij'],
         ['abcde', 'xyz', 'ecdab'],
         ['a', 'ab', 'abc', 'abd', 'abf', 'abj'],
         ['iiii', 'oiii', 'ooii', 'oooi', 'oooo'],
-        ['oiii', 'ioii', 'iioi', 'iiio'],
+        ['oiii', 'ioii', 'iioi', 'iiio']
       ];
 
-      assert.strictEqual(3, partTwo(PASSPHRASES));
+      strictEqual(3, partTwo(PASSPHRASES));
     });
   });
 });

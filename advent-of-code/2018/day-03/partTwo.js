@@ -42,4 +42,4 @@ const partTwo = (input) => {
   return correctClaimID;
 };
 
-module.exports = partTwo;
+export default partTwo;

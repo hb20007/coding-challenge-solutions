@@ -12,4 +12,4 @@ const partTwo = (rows) =>
     }
   }, 0);
 
-module.exports = partTwo;
+export default partTwo;

@@ -20,4 +20,4 @@ const partTwo = (input) => {
   return Math.min(...removedLengths);
 };
 
-module.exports = partTwo;
+export default partTwo;

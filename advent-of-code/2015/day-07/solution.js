@@ -1,6 +1,8 @@
-const fs = require('node:fs');
+import { readFileSync } from 'node:fs';
 
-const INPUT = fs.readFileSync(`${__dirname}/input.txt`, 'utf-8').split('\n');
+const INPUT = readFileSync(`${import.meta.dirname}/input.txt`, 'utf-8').split(
+  '\n'
+);
 
 const COMMAND_REGEX = /[A-Z]+/g;
 const ARGUMENTS_REGEX = /[a-z0-9]+/g;
@@ -14,7 +16,7 @@ const BITWISE_METHODS = {
   OR: (a, b) => a | b, // NOSONAR
   NOT: (a) => ~a, // NOSONAR
   LSHIFT: (a, b) => a << b, // NOSONAR
-  RSHIFT: (a, b) => a >> b, // NOSONAR
+  RSHIFT: (a, b) => a >> b // NOSONAR
 };
 
 // Parses an instruction and returns an object with the command, arguments, and destination wire:
@@ -26,7 +28,7 @@ const parseInstruction = (instruction) => {
   return {
     command: command?.[0],
     args: args.map((arg) => (Number.isNaN(Number(arg)) ? arg : Number(arg))),
-    destination,
+    destination
   };
 };
 
@@ -57,7 +59,7 @@ INPUT.forEach((instruction) => {
   const parsedInstruction = parseInstruction(instruction);
   WIRES.set(parsedInstruction.destination, {
     command: parsedInstruction.command,
-    args: parsedInstruction.args,
+    args: parsedInstruction.args
   });
 });
 

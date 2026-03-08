@@ -22,4 +22,4 @@ const partOne = (input) => {
   return Object.values(coordMap).filter((val) => val > 1).length;
 };
 
-module.exports = partOne;
+export default partOne;

@@ -1,5 +1,5 @@
-const partOne = require('./partOne');
-const partTwo = require('./partTwo');
+import partOne from './partOne.js';
+import partTwo from './partTwo.js';
 
 const INPUT = 312051;
 

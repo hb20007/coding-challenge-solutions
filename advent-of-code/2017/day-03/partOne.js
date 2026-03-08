@@ -44,4 +44,4 @@ const partOne = (num) => {
   return getSteps(bottomRight, firstSteps, firstDistanceToCenter);
 };
 
-module.exports = partOne;
+export default partOne;

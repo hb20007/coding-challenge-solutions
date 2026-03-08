@@ -24,4 +24,4 @@ const partTwo = (input, limit) => {
   return count;
 };
 
-module.exports = partTwo;
+export default partTwo;

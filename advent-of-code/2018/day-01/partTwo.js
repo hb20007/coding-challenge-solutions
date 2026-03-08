@@ -21,4 +21,4 @@ const partTwo = (input) => {
   return currentFreq;
 };
 
-module.exports = partTwo;
+export default partTwo;

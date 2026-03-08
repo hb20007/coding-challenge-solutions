@@ -4,4 +4,4 @@ const partOne = (rows) =>
     0
   );
 
-module.exports = partOne;
+export default partOne;

@@ -1,6 +1,6 @@
 const partTwo = (passphrases) => {
   passphrases = passphrases.map((phrase) =>
-    phrase.map((word) => word.split('').sort().join()),
+    phrase.map((word) => word.split('').sort().join())
   );
 
   return passphrases.reduce(
@@ -9,4 +9,4 @@ const partTwo = (passphrases) => {
   );
 };
 
-module.exports = partTwo;
+export default partTwo;

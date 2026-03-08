@@ -1,6 +1,8 @@
-const fs = require('node:fs');
+import { readFileSync } from 'node:fs';
 
-const INPUT = fs.readFileSync(`${__dirname}/input.txt`, 'utf-8').split('\n');
+const INPUT = readFileSync(`${import.meta.dirname}/input.txt`, 'utf-8').split(
+  '\n'
+);
 
 const PERSON_ATTRIBUTES_REGEX =
   /(\w+) would (\w+) (\d+) happiness units by sitting next to (\w+)./;

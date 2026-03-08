@@ -31,4 +31,4 @@ const partOne = (input) => {
   return takenSteps;
 };
 
-module.exports = partOne;
+export default partOne;

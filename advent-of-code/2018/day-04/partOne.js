@@ -80,4 +80,4 @@ const partOne = (input) => { // NOSONAR
   return +laziestGuardId * sleepiestMinute;
 };
 
-module.exports = partOne;
+export default partOne;

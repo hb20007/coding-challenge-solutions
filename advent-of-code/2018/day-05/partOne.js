@@ -11,4 +11,4 @@ const partOne = (input) => {
   return finalReduced.length;
 };
 
-module.exports = partOne;
+export default partOne;

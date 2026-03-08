@@ -18,4 +18,4 @@ const partOne = (input) => {
   );
 };
 
-module.exports = partOne;
+export default partOne;

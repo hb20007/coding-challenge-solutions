@@ -1,9 +1,11 @@
-require('chai').should();
-const partOne = require('./partOne');
-const partTwo = require('./partTwo');
+import { should } from 'chai';
+import partOne from './partOne.js';
+import partTwo from './partTwo.js';
+
+should();
 
 describe('Part 1', () => {
-  it('should return 4 overlapping inches', () => {
+  it('should return four overlapping inches', () => {
     const input = `#1 @ 1,3: 4x4
 #2 @ 3,1: 4x4
 #3 @ 5,5: 2x2`;

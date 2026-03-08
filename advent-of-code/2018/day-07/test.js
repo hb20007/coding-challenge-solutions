@@ -1,5 +1,7 @@
-require('chai').should();
-const partOne = require('./partOne');
+import { should } from 'chai';
+import partOne from './partOne.js';
+
+should();
 
 describe('Part 1', () => {
   it('should return CABDFE', () => {
