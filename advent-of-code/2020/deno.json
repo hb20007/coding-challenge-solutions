@@ -1,0 +1,12 @@
+{
+  "imports": {
+    "@std/assert": "jsr:@std/assert@^1.0.0"
+  },
+  "lint": {
+    "exclude": ["node_modules", "*.md"]
+  },
+  "fmt": {
+    "singleQuote": true,
+    "exclude": ["node_modules", "*.md"]
+  }
+}
