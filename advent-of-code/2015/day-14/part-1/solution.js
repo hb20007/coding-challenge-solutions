@@ -7,16 +7,25 @@ const INPUT = readFileSync(`${import.meta.dirname}/input.txt`, 'utf-8').split(
 const REINDEER_REGEX = /\d+/g;
 const TIME = 2503;
 
-const getReindeerDistance = (input) => {
-  const args = input.match(REINDEER_REGEX).map(Number);
-  const [speed, time, rest] = args;
+const getReindeerDistance = (reindeerString) => {
+  const [speed, time, rest] = reindeerString.match(REINDEER_REGEX).map(Number);
 
-  return Math.ceil(TIME / (time + rest)) * (speed * time); // Number of cycles * distance traveled at each cycle
+  const cycleDuration = time + rest;
+  const numberOfCompleteCycles = Math.floor(TIME / cycleDuration);
+  const distanceCoveredInACycle = speed * time;
+  const remainingSeconds = TIME % cycleDuration;
+
+  const distanceCoveredInCompleteCycles =
+    numberOfCompleteCycles * distanceCoveredInACycle;
+  const distanceCoveredInLastCycle = speed * Math.min(remainingSeconds, time);
+
+  return distanceCoveredInCompleteCycles + distanceCoveredInLastCycle;
 };
 
-const result = INPUT.reduce(
-  (max, reindeer) => Math.max(getReindeerDistance(reindeer), max),
+const winnerDistance = INPUT.reduce(
+  (maxDistance, reindeerSentence) =>
+    Math.max(getReindeerDistance(reindeerSentence), maxDistance),
   0
 );
 
-console.log(result);
+console.log(winnerDistance);

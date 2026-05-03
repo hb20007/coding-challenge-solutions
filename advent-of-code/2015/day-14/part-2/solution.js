@@ -10,58 +10,60 @@ const TIME = 2503;
 
 const reindeerPoints = new Map();
 
-// Get reindeer name from input:
-const getReindeerName = (input) => input.match(REINDEER_NAME_REGEX)[0];
+const getReindeerName = (reindeerString) =>
+  reindeerString.match(REINDEER_NAME_REGEX)[0];
 
-// Calculate the distance for one of the reindeer from 0 to 2503 seconds:
-function* getReindeerDistanceIterator(input) {
-  const args = input.match(REINDEER_ARGS_REGEX).map(Number);
-  const [speed, time, rest] = args;
+// Calculate the distance for one reindeer from 0 to TIME seconds:
+function* getReindeerDistanceIterator(reindeerString) {
+  const [speed, time, rest] = reindeerString
+    .match(REINDEER_ARGS_REGEX)
+    .map(Number);
 
+  const cycleDuration = time + rest;
   let currentDistance = 0;
 
   for (let currentTime = 0; currentTime <= TIME; currentTime++) {
-    const isMoving =
-      currentTime % (time + rest) <= time && currentTime % (time + rest) !== 0;
+    const secondsIntoCycle = currentTime % cycleDuration;
+    const isMoving = secondsIntoCycle <= time && secondsIntoCycle !== 0;
     if (isMoving) {
       currentDistance += speed;
     }
+
     yield currentDistance;
   }
 }
 
-// Make a map of all distances for all reindeer:
-const allTraveledDistances = INPUT.reduce(
-  (map, reindeer) =>
-    map.set(
-      getReindeerName(reindeer),
-      Array.from(getReindeerDistanceIterator(reindeer))
+const allReindeerDistances = INPUT.reduce(
+  (distanceMap, reindeerSentence) =>
+    distanceMap.set(
+      getReindeerName(reindeerSentence),
+      Array.from(getReindeerDistanceIterator(reindeerSentence))
     ),
   new Map()
 );
 
-// Start gathering winners for each second:
-for (let currentTime = 0; currentTime <= TIME; currentTime++) {
-  let winnerInTheRound = '';
-  let max = 0;
+// Simulate race:
+for (let currentTime = 1; currentTime <= TIME; currentTime++) {
+  let roundWinners = [];
+  let currentMaxDistance = 0;
 
-  for (const reindeerName of allTraveledDistances.keys()) {
-    const reindeerTraveled =
-      allTraveledDistances.get(reindeerName)[currentTime];
+  for (const reindeerName of allReindeerDistances.keys()) {
+    const reindeerDistance =
+      allReindeerDistances.get(reindeerName)[currentTime];
 
-    if (reindeerTraveled >= max) {
-      winnerInTheRound = reindeerName;
-      max = reindeerTraveled;
+    if (reindeerDistance > currentMaxDistance) {
+      roundWinners = [reindeerName];
+      currentMaxDistance = reindeerDistance;
+    } else if (reindeerDistance === currentMaxDistance) {
+      roundWinners.push(reindeerName);
     }
   }
 
-  reindeerPoints.set(
-    winnerInTheRound,
-    (reindeerPoints.get(winnerInTheRound) || 0) + 1
-  );
+  for (const roundWinner of roundWinners) {
+    reindeerPoints.set(roundWinner, (reindeerPoints.get(roundWinner) || 0) + 1);
+  }
 }
 
-// Calculate the winner and points:
-const result = Math.max(...Array.from(reindeerPoints.values()));
+const winnerPoints = Math.max(...Array.from(reindeerPoints.values()));
 
-console.log(result);
+console.log(winnerPoints);
