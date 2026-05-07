@@ -1,80 +1,68 @@
 import { readFileSync } from 'node:fs';
 
-function extractInfo(room) {
-  // eslint-disable-next-line no-unused-vars
-  const [_, name, sectorId, sum] = room.match( // NOSONAR
-    /([a-z-]+)(\d+)\[([a-z]{5})\]/
+const extractRoomInfo = (room) => {
+  const [, name, sectorID, checksum] = room.match(
+    /([a-z-]+)-(\d+)\[([a-z]{5})\]/
   );
-  return { name, sectorId, sum };
-}
+  return { name, sectorID, checksum };
+};
+
+const addCharToCharCountObjects = (charCountObjects, char) => {
+  const index = charCountObjects.findIndex(
+    (charCountObject) => charCountObject.char === char
+  );
+
+  const newCharCountObjects = [...charCountObjects];
+
+  if (index > -1) {
+    newCharCountObjects[index].count++;
+  } else {
+    newCharCountObjects.push({ char, count: 1 });
+  }
+
+  return newCharCountObjects;
+};
+
+const sortByCountAndChar = (item1, item2) => {
+  let result = 0;
+
+  if (item1.count < item2.count) {
+    result = 1;
+  } else if (item1.count > item2.count) {
+    result = -1;
+  } else if (item1.char < item2.char) {
+    result = -1;
+  } else if (item1.char > item2.char) {
+    result = 1;
+  }
+
+  return result;
+};
+
+const calculateChecksum = (roomName, checksumLength) =>
+  roomName
+    .split('')
+    .filter((char) => /[a-z]/.test(char))
+    .reduce(addCharToCharCountObjects, [])
+    .sort(sortByCountAndChar)
+    .slice(0, checksumLength)
+    .map((charCountObject) => charCountObject.char)
+    .join('');
+
+const isRoomReal = (name, checksum) =>
+  checksum === calculateChecksum(name, checksum.length);
 
 const rooms = readFileSync(`${import.meta.dirname}/input.txt`)
   .toString()
   .split(/[\r\n]+/)
-  .map(extractInfo);
+  .map(extractRoomInfo);
 
-function sortByKey(item1, item2) {
-  const count1 = item1.count;
-  const count2 = item2.count;
+const realRoomsSectorIdSum = rooms.reduce(
+  (sectorIdsSum, currentRoom) =>
+    isRoomReal(currentRoom.name, currentRoom.checksum)
+      ? sectorIdsSum + +currentRoom.sectorID
+      : sectorIdsSum,
+  0
+);
 
-  const name1 = item1.char;
-  const name2 = item2.char;
-
-  let result = 0;
-
-  if (count1 > count2) {
-    result = 1;
-  } else if (count1 < count2) {
-    result = -1;
-  } else { // count1 === count2
-    // eslint-disable-next-line no-lonely-if
-    if (name1 < name2) { // NOSONAR
-      result = 1;
-    } else if (name1 > name2) {
-      result = -1;
-    }
-  }
-
-  return result;
-}
-
-function checksum(roomName) {
-  return roomName
-    .split('')
-    .filter((char) => /[a-z]/.test(char))
-    .reduce(
-      (info, char) => {
-        const [chars, charCounts] = info;
-        const index = chars.indexOf(char);
-
-        if (index > -1) {
-          charCounts[index].count += 1;
-        } else {
-          chars.push(char);
-          charCounts.push({ char, count: 1 });
-        }
-
-        return [chars, charCounts];
-      },
-      [[], []]
-    )[1]
-    .sort(sortByKey)
-    .reverse()
-    .slice(0, 5)
-    .map((charCountTuple) => charCountTuple.char)
-    .join('');
-}
-
-function checkRoom(name, sum) {
-  return sum === checksum(name);
-}
-
-let sectorIdsSum = 0;
-
-rooms.forEach((room) => {
-  if (checkRoom(room.name, room.sum)) {
-    sectorIdsSum += +room.sectorId;
-  }
-});
-
-console.log(sectorIdsSum);
+console.log(realRoomsSectorIdSum);
