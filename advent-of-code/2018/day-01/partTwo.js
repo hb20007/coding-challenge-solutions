@@ -2,7 +2,7 @@
 // "the device might need to repeat its list of frequency changes many times
 // before a duplicate frequency is found".
 const partTwo = (input) => {
-  input = input.split('\n').map(Number);
+  input = input.split(/[\r\n]+/).map(Number);
 
   let currentFreq = 0;
   let i = 0;

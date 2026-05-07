@@ -2,7 +2,7 @@ import { readFileSync } from 'node:fs';
 
 const INPUT = readFileSync(`${import.meta.dirname}/input.txt`)
   .toString()
-  .split('\n');
+  .split(/[\r\n]+/);
 
 const COMMANDS_REGEX =
   /(turn on|turn off|toggle) (\d+),(\d+) through (\d+),(\d+)/;
@@ -15,7 +15,7 @@ const parseCommand = (string) => {
     x1: +command[2],
     y1: +command[3],
     x2: +command[4],
-    y2: +command[5],
+    y2: +command[5]
   };
 };
 

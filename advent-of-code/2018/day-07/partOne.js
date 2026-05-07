@@ -1,5 +1,5 @@
 const partOne = (input) => {
-  input = input.split('\n').map((line) => [line[5], line[36]]);
+  input = input.split(/[\r\n]+/).map((line) => [line[5], line[36]]);
   const allSteps = [...new Set(input.flat())].sort();
 
   function getRequirements(step) {

@@ -2,7 +2,7 @@ import { readFileSync } from 'node:fs';
 
 const INPUT = readFileSync(`${import.meta.dirname}/input.txt`)
   .toString()
-  .split('\n');
+  .split(/[\r\n]+/);
 
 const VOWELS = new Set(['a', 'e', 'i', 'o', 'u']);
 const DOUBLE_LETTERS = 'abcdefghijklmnopqrstuvwxyz'

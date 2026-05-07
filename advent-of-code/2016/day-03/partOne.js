@@ -2,7 +2,7 @@ import { readFileSync } from 'node:fs';
 
 const vertices = readFileSync(`${import.meta.dirname}/input.txt`)
   .toString()
-  .split('\n');
+  .split(/[\r\n]+/);
 
 function isTriangle(data) {
   const side1 = Number(data.substr(0, 5));

@@ -2,7 +2,7 @@ import { readFileSync } from 'node:fs';
 
 const instructions = readFileSync(`${import.meta.dirname}/input.txt`)
   .toString()
-  .split('\n')
+  .split(/[\r\n]+/)
   .map((line) => line.split(''));
 
 const DIALS = [

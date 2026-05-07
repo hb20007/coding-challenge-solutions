@@ -5,7 +5,7 @@ const partTwo = (num) => {
   const response = request('GET', 'https://oeis.org/A141481/b141481.txt');
   const sequenceInverted = response.body
     .toString()
-    .split('\n')
+    .split(/[\r\n]+/)
     .slice(2)
     .map((str) => Number.parseInt(str.split(' ')[1]))
     .reverse();

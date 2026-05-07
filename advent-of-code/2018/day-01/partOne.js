@@ -1,6 +1,6 @@
 const partOne = (input) =>
   input
-    .split('\n')
+    .split(/[\r\n]+/)
     .map(Number)
     .reduce((result, change) => result + change);
 

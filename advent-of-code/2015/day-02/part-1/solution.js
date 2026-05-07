@@ -2,7 +2,7 @@ import { readFileSync } from 'node:fs';
 
 const INPUT = readFileSync(`${import.meta.dirname}/input.txt`)
   .toString()
-  .split('\n');
+  .split(/[\r\n]+/);
 
 const result = INPUT.reduce((totalArea, element) => {
   const [l, w, h] = element.split('x');

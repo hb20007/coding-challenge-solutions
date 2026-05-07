@@ -2,7 +2,7 @@ import { readFileSync } from 'node:fs';
 
 const INPUT = readFileSync(`${import.meta.dirname}/input.txt`)
   .toString()
-  .split('\n');
+  .split(/[\r\n]+/);
 
 const result = INPUT.reduce((totalLength, element) => {
   const sides = element.split('x').map(Number); // We map using Number() to be able to use "!=="" for comparison with integers.

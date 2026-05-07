@@ -11,7 +11,7 @@ const partOne = (input) => {
       return letters.find((letter) => letterMap[letter] === count);
     });
 
-  input = input.split('\n');
+  input = input.split(/[\r\n]+/);
 
   return (
     filterByLetterCount(input, 2).length * filterByLetterCount(input, 3).length

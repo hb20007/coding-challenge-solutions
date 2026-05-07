@@ -1,6 +1,6 @@
 /* eslint consistent-return: "off" */
 const partTwo = (input) => {
-  input = input.split('\n');
+  input = input.split(/[\r\n]+/);
 
   const noOfIds = input.length;
   const idLength = input[0].length;

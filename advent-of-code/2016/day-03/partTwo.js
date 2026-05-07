@@ -2,7 +2,7 @@ import { readFileSync } from 'node:fs';
 
 const lines = readFileSync(`${import.meta.dirname}/input.txt`)
   .toString()
-  .split('\n');
+  .split(/[\r\n]+/);
 
 function getSides(line) {
   return [

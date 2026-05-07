@@ -10,7 +10,7 @@ function extractInfo(room) {
 
 const rooms = readFileSync(`${import.meta.dirname}/input.txt`)
   .toString()
-  .split('\n')
+  .split(/[\r\n]+/)
   .map(extractInfo);
 
 function sortByKey(item1, item2) {

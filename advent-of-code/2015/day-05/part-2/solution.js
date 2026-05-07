@@ -2,7 +2,7 @@ import { readFileSync } from 'node:fs';
 
 const INPUT = readFileSync(`${import.meta.dirname}/input.txt`)
   .toString()
-  .split('\n');
+  .split(/[\r\n]+/);
 
 const hasRepeatingPair = (string) => /([a-z][a-z]).*\1/.test(string);
 const hasLetterSandwich = (string) => /([a-z])[a-z]\1/.test(string);

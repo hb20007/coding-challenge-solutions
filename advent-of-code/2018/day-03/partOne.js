@@ -1,6 +1,6 @@
 const partOne = (input) => {
   input = input
-    .split('\n')
+    .split(/[\r\n]+/)
     .map((n) => n.split(/\s+/))
     .map((arr) => {
       const pos = arr[2].replace(':', '').split(',').map(Number);

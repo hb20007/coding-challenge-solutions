@@ -1,6 +1,6 @@
 const partTwo = (input) => { // NOSONAR
   input = input
-    .split('\n')
+    .split(/[\r\n]+/)
     .map((event) => event.trim())
     .sort()
     .map((event) =>

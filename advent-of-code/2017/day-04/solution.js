@@ -3,7 +3,7 @@ import partOne from './partOne.js';
 import partTwo from './partTwo.js';
 
 const INPUT = readFileSync(`${import.meta.dirname}/input.txt`, 'utf8')
-  .split('\r\n')
+  .split(/[\r\n]+/)
   .map((line) => line.split(' '));
 
 console.log('PART 1:', partOne(INPUT));
