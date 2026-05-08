@@ -1,5 +1,5 @@
 const partOne = (input) => { // NOSONAR
-  input = input.split('\n').map((line) => line.split(', ').map(Number));
+  input = input.split(/[\r\n]+/).map((line) => line.split(', ').map(Number));
 
   const xCoords = input.map(([x]) => x); // Array destructuring
   const yCoords = input.map(([, y]) => y);

@@ -1,7 +1,7 @@
 import { readFileSync } from 'node:fs';
 
 const INPUT = readFileSync(`${import.meta.dirname}/input.txt`, 'utf-8').split(
-  '\n'
+  /[\r\n]+/
 );
 
 const DIRECTION_REGEX = /(\w+) to (\w+) = (\d+)/;

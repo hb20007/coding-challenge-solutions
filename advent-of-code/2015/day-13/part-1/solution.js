@@ -1,7 +1,7 @@
 import { readFileSync } from 'node:fs';
 
 const INPUT = readFileSync(`${import.meta.dirname}/input.txt`, 'utf-8').split(
-  '\n'
+  /[\r\n]+/
 );
 
 const PERSON_ATTRIBUTES_REGEX =
