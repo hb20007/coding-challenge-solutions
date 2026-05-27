@@ -11,9 +11,9 @@
   "main": "generators/index.js",
   "keywords": ["aoc2020", "aoc", "advent of code", "yeoman-generator"],
   "devDependencies": {
-    "yeoman-test": "^1.7.0",
+    "yeoman-test": "^11.5.2",
     "yeoman-assert": "^3.1.1",
-    "eslint": "^6.6.0",
+    "eslint": "^10.4.0",
     "prettier": "^1.19.1",
     "husky": "^3.0.9",
     "lint-staged": "^9.4.3",
@@ -26,7 +26,7 @@
     "npm": ">= 4.0.0"
   },
   "dependencies": {
-    "yeoman-generator": "^3.1.1",
+    "yeoman-generator": "^8.2.2",
     "chalk": "^2.1.0",
     "yosay": "^2.0.2"
   },
